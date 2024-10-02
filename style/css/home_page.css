@@ -1,3 +1,4 @@
+@charset "UTF-8";
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap");
 body {
   font-family: "Poppins", sans-serif;
@@ -117,6 +118,9 @@ body .products_container {
   justify-content: space-between;
   gap: 20px;
 }
+body .container_featured {
+  display: flex;
+}
 body .product-card {
   background-color: white;
   border: 1px solid #ddd;
@@ -141,4 +145,23 @@ body .product-card p {
 body .product-card .price {
   font-size: 18px;
   color: #ff4081;
+}
+
+#pagination-dots {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.dot {
+  width: 30px;
+  height: 5px;
+  border-radius: 10px;
+  background-color: gray; /* Màu sắc cho các chấm không hoạt động */
+  margin: 0 5px;
+  cursor: pointer;
+}
+
+.dot.active {
+  background-color: rgb(173, 55, 181); /* Màu sắc cho chấm hiện tại */
 }

@@ -126,7 +126,9 @@ body {
     justify-content: space-between;
     gap: 20px;
   }
-
+  .container_featured {
+    display: flex;
+  }
   .product-card {
     background-color: white;
     border: 1px solid #ddd;
@@ -156,3 +158,24 @@ body {
     color: #ff4081;
   }
 }
+#pagination-dots {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.dot {
+  width: 30px;
+  height: 5px;
+  border-radius: 10px;
+  background-color: gray; /* Màu sắc cho các chấm không hoạt động */
+  margin: 0 5px;
+  cursor: pointer;
+}
+
+.dot.active {
+  background-color: rgb(173, 55, 181); /* Màu sắc cho chấm hiện tại */
+}
+// .image_product {
+//   background-color: #777;
+// }

@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="./style/css/reset.css" />
     <link rel="stylesheet" href="./style/css/home_page.css" />
+    <link rel="stylesheet" href="./style/css/leatest_products.css" />
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
@@ -85,8 +86,24 @@
     </div>
     <div class="featured_products">
       <h1>Featured Products</h1>
-      <div class="products_container" id="products-container"></div>
+      <div class="products_container" id="products-containers"></div>
+      <div id="container_featured"></div>
+      <div id="pagination-dots"></div>
+    </div>
+    <div class="Leatest_Products">
+      <h1>Leatest Products</h1>
+      <div class="button_click">
+        <ul>
+          <li onclick="fetchProducts('new-arrival')">New Arrival</li>
+          <li onclick="fetchProducts('best-seller')">Best Seller</li>
+          <li onclick="fetchProducts('featured')">Featured</li>
+          <li onclick="fetchProducts('special-offer')">Special Offer</li>
+        </ul>
+      </div>
+
+      <div id="products"></div>
     </div>
     <script src="./style/js/home_page.js"></script>
+    <script src="./style/js/Leatest_Products.js"></script>
   </body>
 </html>
