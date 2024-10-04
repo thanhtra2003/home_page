@@ -14,13 +14,19 @@ function displayProducts(products) {
   const container = document.getElementById('products-containers')
   container.innerHTML = ''
   products.forEach(product => {
-    const productCard = `
-        <div class="product-card">
-            <img class='image_product' src="${product.thumbnail}" alt="${product.title}">
-            <h3 class='product_title'>${product.title}</h3>
-            <p class='product_price'>$${product.price}</p>
-            <button>Buy Now</button>
-        </div>`
+    const productCard = `<div class="product_card">
+                <img class="img_pro" src=${product.thumbnail}>
+                <div class="infor_pro">
+                    <span class="name">${product.title}</span>
+                    <div class="line">
+                      <div class ="line_color1"></div>
+                       <div class ="line_color2"></div>
+                        <div class ="line_color3"></div>
+                    </div>
+                    <span class="code">Code - ${product.sku}</span>
+                    <span class="price">$${product.price}</span>
+                </div>
+            </div>`
     container.innerHTML += productCard
   })
 }

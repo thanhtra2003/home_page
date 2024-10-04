@@ -1,5 +1,7 @@
 @charset "UTF-8";
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100..700;1,100..700&display=swap" rel="stylesheet');
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100..700;1,100..700&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap" rel="stylesheet');
 body {
   font-family: "Poppins", sans-serif;
   max-width: 1920px;
@@ -14,10 +16,15 @@ body .heading_bar {
   justify-content: center;
   align-items: center;
   gap: 599px;
+  color: #f1f1f1;
 }
 body .heading_bar .contact {
   display: flex;
   gap: 48px;
+  font-family: "Josefin Sans";
+  font-size: 16px;
+  font-weight: 600;
+  line-height: normal;
 }
 body .heading_bar .contact .email {
   display: flex;
@@ -31,6 +38,11 @@ body .heading_bar .contact i {
 body .heading_bar .feature {
   display: flex;
   gap: 32px;
+  font-family: "Josefin Sans";
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 16px;
+  text-align: left;
 }
 body .heading_bar .feature .login {
   display: flex;
@@ -45,7 +57,6 @@ body .nav_bar {
   display: flex;
   max-width: 1920px;
   height: 80px;
-  background-color: antiquewhite;
   justify-content: center;
   align-items: center;
 }
@@ -55,52 +66,134 @@ body .nav_bar .main {
   display: flex;
 }
 body .nav_bar .main h1 {
-  font-weight: bold;
-  font-size: 30px;
   display: flex;
   align-items: center;
   justify-content: center;
   margin-right: 100px;
+  color: #0d0e43;
+  font-family: "Josefin Sans";
+  font-size: 34px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
 }
 body .nav_bar .main .menu {
   display: flex;
   align-items: center;
-  gap: 50px;
-  font-weight: bold;
+  gap: 35px;
+  font-family: "lato";
 }
 body .nav_bar .main .menu a {
   text-decoration: none;
 }
 body .nav_bar .main .menu a:hover {
-  color: red;
+  color: #fb2e86;
 }
 body .nav_bar .main .search {
   margin-left: 100px;
   display: flex;
   align-items: center;
-  border-radius: 50px;
-  background-color: white;
+  width: 317px;
+  height: 40px;
 }
 body .nav_bar .main .search_input {
   border: none;
   padding: 10px 20px;
   font-size: 16px;
-  width: 200px;
-  outline: none;
+  width: 100%;
+  border: solid 2px #e7e6ef;
+  border-right: none;
 }
 body .nav_bar .main .search_button {
+  width: 51px;
+  height: 40px;
   border: none;
-  padding: 10px;
   cursor: pointer;
-  background-color: pink;
+  background-color: #fb2e86;
+  align-items: center;
+  display: flex;
+  justify-content: center;
 }
 body .nav_bar .main .search_button i {
   width: 20px;
   height: 20px;
+  color: #f3f9ff;
 }
-body .banner img {
-  max-width: 100%;
+body .banner {
+  display: flex;
+  background-color: #f2f0ff;
+  max-width: 1920px;
   height: 764px;
+  position: relative;
+}
+body .banner .lamp {
+  width: 387px;
+  height: 387px;
+  left: 15px;
+  gap: 0px;
+  opacity: 0px;
+  position: absolute;
+}
+body .banner .content_banner {
+  width: 644px;
+  height: 248px;
+  align-items: center;
+  top: 203px;
+  left: 310px;
+  gap: 0px;
+  opacity: 0px;
+  position: absolute;
+}
+body .banner .content_banner .line-1 {
+  font-family: "Lato";
+  font-size: 16px;
+  font-weight: 700;
+  color: #fb2e86;
+  margin-bottom: 100px;
+}
+body .banner .content_banner .line-2 {
+  width: 644px;
+  height: 140px;
+  color: #000;
+  font-family: "Josefin Sans";
+  font-size: 53px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 132%; /* 69.96px */
+  letter-spacing: 0.795px;
+}
+body .banner .content_banner .line-3 {
+  width: 700px;
+  color: var(--sub-text-color, #8a8fb9);
+  font-family: Lato;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 700;
+  margin-top: 12px;
+  line-height: 28px; /* 175% */
+  margin-bottom: 27px;
+}
+body .banner .sofa {
+  width: 600px;
+  height: 600px;
+  position: absolute;
+  top: 39px;
+  right: 30px;
+}
+body .banner .btn_shop {
+  width: 163px;
+  height: 50px;
+  background-color: #fb2e86;
+  color: #fff;
+  font-family: "Josefin Sans";
+  font-size: 17px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+  letter-spacing: 0.34px;
+  border: none;
+  border-radius: 2px;
+  margin-top: 27px;
 }
 body .featured_products {
   max-width: 1168px;
@@ -108,9 +201,14 @@ body .featured_products {
   text-align: center;
 }
 body .featured_products h1 {
-  font-size: 36px;
-  color: #333;
+  width: 367px;
+  height: 42px;
+  margin: 0 auto;
+  color: #1a0b5b;
   margin-bottom: 20px;
+  font-family: "Josefin Sans";
+  font-weight: 700;
+  font-size: 42px;
 }
 body .products_container {
   display: flex;
@@ -121,30 +219,67 @@ body .products_container {
 body .container_featured {
   display: flex;
 }
-body .product-card {
-  background-color: white;
-  border: 1px solid #ddd;
-  border-radius: 8px;
-  padding: 20px;
-  width: 23%;
+body .product_card {
+  width: 270px;
+  height: 361px;
+  align-items: center;
+  background: #fff;
+  box-shadow: 0px 0px 25px 0px rgba(0, 0, 0, 0.1);
 }
-body .product-card img {
-  width: 100%;
-  height: 200px;
-  -o-object-fit: cover;
-     object-fit: cover;
+body .img_pro {
+  width: 270px;
+  height: 236px;
+  background: #f6f7fb;
 }
-body .product-card h3 {
-  font-size: 20px;
-  margin: 10px 0;
+body .infor_pro {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-top: 15px;
+  align-items: center;
 }
-body .product-card p {
-  color: #777;
-  font-size: 14px;
-}
-body .product-card .price {
+body .name {
+  font-family: "lato";
   font-size: 18px;
-  color: #ff4081;
+  font-weight: 700;
+}
+body .name:hover {
+  color: #fb2e86;
+}
+body .code {
+  color: #151875;
+  font-family: "Josefin Sans";
+  font-size: 14px;
+  font-weight: 400;
+}
+body .price {
+  color: #151875;
+  font-family: "Lato";
+  font-size: 14px;
+  font-weight: 400;
+}
+body .line {
+  display: flex;
+  margin: 0 auto;
+  gap: 5px;
+}
+body .line .line_color1 {
+  width: 14px;
+  height: 5px;
+  border-radius: 10px;
+  background-color: #ffb703;
+}
+body .line .line_color2 {
+  width: 14px;
+  height: 5px;
+  border-radius: 10px;
+  background-color: #ff03c8;
+}
+body .line .line_color3 {
+  width: 14px;
+  height: 5px;
+  border-radius: 10px;
+  background-color: #2bff00;
 }
 
 #pagination-dots {

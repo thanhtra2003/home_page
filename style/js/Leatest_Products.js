@@ -1,5 +1,33 @@
+//4 sản phẩm
+async function load() {
+  const url = 'https://dummyjson.com/products?limit=4'
+  const response = await fetch(url)
+  const data = await response.json()
+
+  const productsContainer = document.getElementById('products')
+  productsContainer.innerHTML = ''
+
+  data.products.forEach(product => {
+    productsContainer.innerHTML += `
+              <div class="product_leatest">
+                 <img class="img_pro" src=${product.thumbnail}>
+                <div class="infor_pro">
+                    <span class="name">${product.title}</span>
+                    <div class="line">
+                      <div class ="line_color1"></div>
+                       <div class ="line_color2"></div>
+                        <div class ="line_color3"></div>
+                    </div>
+                    <span class="code">Code - ${product.sku}</span>
+                    <span class="price">$${product.price}</span>
+                </div>
+              </div>
+          `
+  })
+}
+load()
+//mỗi cagetory là 6 sản phẩm
 async function fetchProducts(category) {
-  // Định nghĩa URL dựa trên danh mục
   let url
   if (category === 'new-arrival') {
     url = 'https://dummyjson.com/products?limit=5'
@@ -11,23 +39,26 @@ async function fetchProducts(category) {
     url = 'https://dummyjson.com/products?limit=5&skip=20'
   }
 
-  // Lấy dữ liệu từ URL
   const response = await fetch(url)
   const data = await response.json()
-
-  // Lấy phần tử chứa sản phẩm và xóa nội dung cũ
   const productsContainer = document.getElementById('products')
   productsContainer.innerHTML = ''
 
-  // Thêm sản phẩm mới vào trang
   data.products.forEach(product => {
     productsContainer.innerHTML += `
-      <div class="product_leatest">
-        <img src="${product.thumbnail}" alt="${product.title}" />
-        <h3>${product.title}</h3>
-        <p>${product.description}</p>
-        <p>Price: $${product.price}</p>
-      </div>
-    `
+              <div class="product_leatest">
+                 <img class="img_pro" src=${product.thumbnail}>
+                <div class="infor_pro">
+                    <span class="name">${product.title}</span>
+                    <div class="line">
+                      <div class ="line_color1"></div>
+                       <div class ="line_color2"></div>
+                        <div class ="line_color3"></div>
+                    </div>
+                    <span class="code">Code - ${product.sku}</span>
+                    <span class="price">$${product.price}</span>
+                </div>
+              </div>
+          `
   })
 }
