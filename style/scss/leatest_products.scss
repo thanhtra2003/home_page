@@ -1,30 +1,4 @@
-.Leatest_Products {
-  text-align: center;
-}
-
-.button_click ul {
-  display: flex;
-  justify-content: center; /* Căn giữa danh sách theo chiều ngang */
-  gap: 20px;
-  padding: 0;
-  margin: 0;
-  list-style-type: none; /* Xóa dấu đầu dòng của ul */
-}
-
-.button_click ul li {
-  cursor: pointer;
-  padding: 10px 20px;
-  transition: color 0.3s ease;
-}
-
-.button_click ul li:hover {
-  text-decoration: underline;
-  color: #fb2e86; /* Màu khi hover */
-}
-
 .Leatest_Products h1 {
-  width: 367px;
-  height: 42px;
   margin: 0 auto;
   color: #1a0b5b;
   margin-bottom: 20px;
@@ -32,121 +6,107 @@
   font-weight: 700;
   font-size: 42px;
 }
+.Leatest_Products {
+  margin: auto;
+  text-align: center;
+}
 
-.products {
+#menu_cagetory {
+  gap: 58px;
+  margin: auto;
+  display: flex;
+  justify-content: center;
+  margin-bottom: 62px;
+}
+.menu {
+  display: inline-block;
+  font-family: 'lato';
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 21.6px;
+  color: #151875;
+}
+.menu:hover {
+  color: #fb4997;
+  text-decoration: underline;
+  cursor: pointer;
+}
+#products {
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
   gap: 20px;
+  max-width: 1168px;
+  margin: auto;
+  position: relative;
 }
 
-.product_leatest {
-  width: 270px;
-  height: 361px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  background: #fff;
+.product {
+  width: 360px;
+  height: 306px;
+  background-color: #ffffff;
   box-shadow: 0px 0px 25px 0px rgba(0, 0, 0, 0.1);
+  box-sizing: border-box;
+  position: relative; /* Để chứa overlay */
+  overflow: hidden; /* Để không làm lộ overlay ra ngoài */
 }
 
-.img_pro {
-  width: 270px;
-  height: 236px;
-  background: #f6f7fb;
-}
-
-.infor_pro {
+.image {
+  width: 100%;
+  height: 270px;
+  background-color: #f7f7f7;
   display: flex;
-  flex-direction: column;
-  gap: 12px;
-  margin-top: 15px;
+  justify-content: center;
   align-items: center;
+  position: relative; /* Để chứa overlay */
 }
 
-.name {
-  font-family: 'lato';
-  font-size: 18px;
-  font-weight: 700;
+img {
+  width: 223px;
+  height: 229px;
 }
-.name:hover {
-  color: #fb2e86;
+.icons {
+  gap: 17px;
+  position: absolute;
+  top: 153px;
+  left: 20px;
+  display: grid;
+  opacity: 0;
+  width: 15px;
+  height: 15px;
+  cursor: pointer;
 }
-.code {
-  color: #151875;
+.icons img {
+  height: 19px;
+  width: 19px;
+}
+.infor {
+  display: flex;
+  align-items: center;
   font-family: 'Josefin Sans';
-  font-size: 14px;
-  font-weight: 400;
+  width: 100%;
+  justify-content: space-between;
+  margin-top: 10px;
+}
+
+h3 {
+  font-size: 16px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .price {
-  color: #151875;
-  font-family: 'Lato';
-  font-size: 14px;
-  font-weight: 400;
-}
-.line {
+  gap: 8px;
   display: flex;
-  margin: 0 auto;
-  gap: 5px;
-  .line_color1 {
-    width: 14px;
-    height: 5px;
-    border-radius: 10px;
-    background-color: #ffb703;
-  }
-  .line_color2 {
-    width: 14px;
-    height: 5px;
-    border-radius: 10px;
-    background-color: #ff03c8;
-  }
-  .line_color3 {
-    width: 14px;
-    height: 5px;
-    border-radius: 10px;
-    background-color: #2bff00;
-  }
+  align-items: center;
 }
-.quality {
-  max-width: 1168px;
-  margin: 50px auto;
-  text-align: center;
-  h1 {
-    width: 367px;
-    height: 42px;
-    margin: 0 auto;
-    color: #1a0b5b;
-    margin-bottom: 20px;
-    font-family: 'Josefin Sans';
-    font-weight: 700;
-    font-size: 42px;
-  }
-  .service {
-    display: flex;
-    gap: 28px;
-    margin-top: 60px;
-    .vc1 {
-      width: 270px;
-      height: 320px;
-      background-color: #f6f7fb;
-      text-align: center;
-    }
-    .vc2 {
-      width: 270px;
-      height: 320px;
-      background-color: #f6f7fb;
-    }
-    .vc3 {
-      width: 270px;
-      height: 320px;
-      background-color: #f6f7fb;
-    }
-    .vc4 {
-      width: 270px;
-      height: 320px;
-      background-color: #f6f7fb;
-    }
-  }
+
+.sale {
+  color: red;
+  text-decoration: line-through;
+  font-size: 12px;
+}
+.product:hover .icons {
+  opacity: 1;
 }
