@@ -76,21 +76,95 @@ async function trendingProducts() {
   products.forEach(product => {
     productsContainer.innerHTML += `
       <div class="product_trend">
-      <div class="pading">
-      <div class="image_trend">
-          <img src="${product.images[0]}" alt="${product.title}" />
+        <div class="pading">
+          <div class="image_trend">
+            <img src="${product.images[0]}" alt="${product.title}" />
+          </div>
         </div>
-      </div>
         
         <div class="infor_pro">
           <h3 class="title">${product.title}</h3>
           <div class="price_trend">
             <p class="discount">$${product.discountPercentage}</p>
-            <p class="goc">$${product.price}</p>
+            <p class="origin">$${product.price}</p>
           </div>
         </div>
+         <!-- Icons giỏ hàng và yêu thích -->
+        <div class="icons">
+          <img src="/assest/fluent_cart-24-regular.png">
+          <img src="/assest/uil_heart-alt (1).png">
+          <img src="/assest/uil_search-plus (1).png">
+        </div>
+    <!-- Button View Detail -->
+        <button class="btn_view_detail">View Detail</button>
       </div>
     `
   })
 }
 trendingProducts()
+
+// trending list
+async function trendingList() {
+  const url = `https://dummyjson.com/products`
+  const response = await fetch(url)
+  const data = await response.json()
+
+  const productsContainer = document.getElementById('container_trendList')
+  productsContainer.innerHTML = ''
+  const products = data.products.slice(0, 3)
+  products.forEach(product => {
+    productsContainer.innerHTML += `
+      <div class="trend_list">
+          <div class="image_list">
+            <img src="${product.images[0]}" alt="${product.title}" />
+          </div>
+        <div class="infor_list">
+          <h3 class="title_list">${product.title}</h3>
+          <p class="origin_list">$${product.price}</p>
+        </div>
+      </div>
+    `
+  })
+}
+trendingList()
+
+// // top cagetory
+// const container = document.getElementById('container_topcategory')
+
+// // Hàm hiển thị sản phẩm mà không hiển thị tên danh mục
+// const displayProductsList = products => {
+//   products.forEach(product => {
+//     const productDiv = document.createElement('div')
+//     productDiv.classList.add('product-item')
+//     productDiv.innerHTML = `
+//       <img src="${product.thumbnail}" alt="${product.title}">
+//       <h3>${product.title}</h3>
+//       <p>Giá: $${product.price}</p>
+//     `
+//     container.appendChild(productDiv) // Thêm sản phẩm vào container
+//   })
+// }
+
+// // Hàm lấy danh sách danh mục và sản phẩm
+// const fetchCategoriesAndProducts = async () => {
+//   try {
+//     // Lấy danh sách danh mục
+//     const categoriesResponse = await fetch('https://dummyjson.com/products/categories')
+//     const categories = await categoriesResponse.json()
+
+//     // Chọn 2 danh mục ngẫu nhiên
+//     const randomCategories = categories.sort(() => 0.5 - Math.random()).slice(0, 2)
+
+//     // Lấy sản phẩm từ 2 danh mục đã chọn
+//     for (const category of randomCategories) {
+//       const productsResponse = await fetch(`https://dummyjson.com/products/category/${category}`)
+//       const productsData = await productsResponse.json()
+//       displayProductsList(productsData.products) // Hiển thị sản phẩm
+//     }
+//   } catch (error) {
+//     console.error('Lỗi khi lấy dữ liệu:', error)
+//   }
+// }
+
+// // Gọi hàm để thực thi
+// fetchCategoriesAndProducts()

@@ -16,7 +16,6 @@
   margin: auto;
   display: flex;
   justify-content: center;
-  margin-bottom: 62px;
 }
 .menu {
   display: inline-block;
@@ -27,18 +26,18 @@
   color: #151875;
 }
 .menu:hover {
-  color: #fb4997;
   text-decoration: underline;
   cursor: pointer;
 }
 #products {
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
-  gap: 20px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-row-gap: 120px;
   max-width: 1168px;
   margin: auto;
   position: relative;
+  justify-content: space-between;
+  margin-top: 62px;
 }
 
 .product {
@@ -87,6 +86,7 @@ img {
   width: 100%;
   justify-content: space-between;
   margin-top: 10px;
+  padding: 5px;
 }
 
 h3 {
@@ -109,4 +109,18 @@ h3 {
 }
 .product:hover .icons {
   opacity: 1;
+}
+.menu {
+  cursor: pointer;
+  padding: 10px;
+  display: inline-block;
+}
+
+.menu {
+  cursor: pointer;
+  color: black;
+}
+
+.menu.active {
+  color: red;
 }

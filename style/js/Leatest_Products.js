@@ -1,18 +1,20 @@
+let currentActiveMenu = null // Biến để lưu danh mục đang active
+
 async function load() {
   const url = 'https://dummyjson.com/products/categories'
   const response = await fetch(url)
   const categories = await response.json()
 
-  const categoryContainer = document.getElementById('menu_cagetory') // Phần tử HTML chứa danh mục
+  const categoryContainer = document.getElementById('menu_category') // Phần tử HTML chứa danh mục
   categoryContainer.innerHTML = '' // Xóa nội dung cũ nếu có
 
   // Lấy 4 danh mục đầu tiên
   const FourCategories = categories.slice(0, 4) // Chỉ lấy 4 danh mục đầu tiên
 
   // Hiển thị các danh mục lên giao diện
-  FourCategories.forEach(category => {
+  FourCategories.forEach((category, index) => {
     categoryContainer.innerHTML += `
-      <div class="menu" onclick="loadProducts('${category.slug}')">
+      <div class="menu" onclick="loadProducts('${category.slug}', this)">
         <span>${category.name}</span>
       </div>
     `
@@ -20,9 +22,13 @@ async function load() {
 
   // Mặc định hiển thị sản phẩm của danh mục đầu tiên
   loadProducts(FourCategories[0].slug)
+
+  // Đặt màu cho danh mục đầu tiên là màu đỏ
+  currentActiveMenu = categoryContainer.querySelector('.menu') // Lưu danh mục đầu tiên
+  currentActiveMenu.style.color = 'red' // Đặt màu đỏ cho danh mục đầu tiên
 }
 
-async function loadProducts(categorySlug) {
+async function loadProducts(categorySlug, clickedElement) {
   const url = `https://dummyjson.com/products/category/${categorySlug}` // Lấy sản phẩm theo danh mục
   const response = await fetch(url)
   const data = await response.json()
@@ -35,11 +41,10 @@ async function loadProducts(categorySlug) {
 
   // Hiển thị các sản phẩm lên giao diện
   products.forEach(product => {
-    console.log(product.image) // Kiểm tra giá trị của product.image
     productsContainer.innerHTML += `
       <div class="product"> 
         <div class="image">
-          <img src="${product.images}" />
+          <img src="${product.thumbnail}" />
         </div>
         <div class="infor">
           <h3>${product.title}</h3>
@@ -56,6 +61,19 @@ async function loadProducts(categorySlug) {
       </div>
     `
   })
+
+  // Cập nhật phần active cho danh mục
+  const menus = document.querySelectorAll('.menu') // Lấy tất cả các danh mục
+  menus.forEach(menu => {
+    menu.style.color = '' // Khôi phục màu sắc mặc định cho tất cả các danh mục
+  })
+
+  // Đặt màu cho danh mục được nhấn
+  clickedElement.style.color = 'red' // Đặt màu chữ cho danh mục được nhấn
+
+  // Cập nhật currentActiveMenu
+  currentActiveMenu = clickedElement // Cập nhật danh mục đang active
 }
 
-load()
+// Gọi hàm load khi DOM đã được tải
+document.addEventListener('DOMContentLoaded', load)
