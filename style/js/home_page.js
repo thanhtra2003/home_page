@@ -127,3 +127,69 @@ async function trendingList() {
   })
 }
 trendingList()
+
+fetch('https://dummyjson.com/products')
+  .then(response => response.json())
+  .then(data => {
+    const randomProduct = data.products[Math.floor(Math.random() * data.products.length)]
+
+    // Tính toán giá giảm
+    const discountPercentage = 20 // Tùy chỉnh theo ý bạn
+    const discountedPrice = randomProduct.price - (randomProduct.price * discountPercentage) / 100
+
+    // Hiển thị sản phẩm
+    const productHTML = `
+        <div class="product_item">
+          <div class='content_product'>
+            <h2>20% Discount Of All Products</h2>
+            <h3>${randomProduct.title}</h3>
+            <p>${randomProduct.description}</p>
+            <div class = 'icon_pro'>
+              <div class='flex'>
+              <i class="fa-solid fa-check">Material expose like metals</i>
+               <i class="fa-solid fa-check">Material expose like metals</i>
+              </div>
+              
+              <div class='flex'>
+               <i class="fa-solid fa-check">Material expose like metals</i>
+                <i class="fa-solid fa-check">Material expose like metals</i>
+              </div>
+            </div>
+          </div>
+          <img src="${randomProduct.thumbnail}" alt="${randomProduct.title}" />
+        </div>
+      `
+    document.getElementById('container_item').innerHTML = productHTML
+  })
+  .catch(error => console.error('Lỗi khi lấy sản phẩm:', error))
+
+// Fetch tất cả sản phẩm từ API
+fetch('https://dummyjson.com/products')
+  .then(response => response.json())
+  .then(data => {
+    const categories = data.products.map(product => product.category)
+    const uniqueCategories = [...new Set(categories)] // Lấy danh sách danh mục duy nhất
+    const firstCategory = uniqueCategories[0] // Lấy danh mục đầu tiên
+
+    // Lọc ra sản phẩm thuộc danh mục đầu tiên
+    const topCategoryProducts = data.products.filter(product => product.category === firstCategory)
+
+    // Hiển thị sản phẩm
+    const categoriesHTML = topCategoryProducts
+      .map(
+        product => `
+    <div class="product_top">
+      <div class='contain_pro'>
+      <img src="${product.thumbnail}" alt="${product.title}" />
+      </div>
+      <h3>${product.title}</h3>
+      <p> $${product.price}</p>
+       <button class="btn_view_detail">View Detail</button>
+    </div>
+  `
+      )
+      .join('')
+
+    document.getElementById('categories_container').innerHTML = categoriesHTML
+  })
+  .catch(error => console.error('Lỗi khi lấy sản phẩm:', error))

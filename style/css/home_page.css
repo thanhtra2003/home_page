@@ -7,6 +7,8 @@ body {
   max-width: 1920px;
   margin: 0 auto;
   box-sizing: border-box;
+  /* Button styling */
+  /* Show button on hover */
 }
 body .heading_bar {
   background-color: blueviolet;
@@ -69,7 +71,7 @@ body .nav_bar .main {
   height: 40px;
   display: flex;
 }
-body .nav_bar .main h1 {
+body .nav_bar .main h2 {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -619,18 +621,6 @@ body .product_trend:hover .btn_view_detail {
   opacity: 1;
   margin: 10px 0 0 10px;
 }
-body .product_trend:hover {
-  background-color: #cfbee7;
-}
-body .product_trend:hover .title {
-  color: #ffffff;
-}
-body .product_trend:hover .discount {
-  color: #ffffff;
-}
-body .product_trend:hover .origin {
-  color: #ffffff;
-}
 body .banner_sale {
   display: flex;
   max-width: 1168px;
@@ -781,7 +771,6 @@ body .blog_item {
   gap: 56px;
 }
 body .blog_item .blog {
-  width: 370px;
   height: 493px;
   background-color: #ffffff;
   box-shadow: 0px 0px 25px 0px rgba(0, 0, 0, 0.1);
@@ -797,7 +786,7 @@ body .blog_item .blog .content {
   padding: 20px;
 }
 body .blog_item .blog img {
-  width: 370px;
+  width: 100%;
   height: 255px;
 }
 body .blog_item .blog h4 {
@@ -930,4 +919,139 @@ body .footer-bottom p {
 body .footer-socials a {
   margin: 0 5px;
   color: #3f3f3f;
+}
+body .discount_item {
+  max-width: 1168px;
+  margin: 50px auto;
+}
+body .discount_item h1 {
+  margin: 0 auto;
+  color: #1a0b5b;
+  margin-bottom: 20px;
+  font-family: "Josefin Sans";
+  font-weight: 700;
+  font-size: 42px;
+}
+body .discount_item .product_item {
+  display: flex;
+  margin-top: 110px;
+}
+body .discount_item .product_item .icon_pro {
+  display: grid;
+}
+body .discount_item h2 {
+  font-family: "Josefin Sans";
+  font-size: 35px;
+  font-weight: 700;
+  line-height: 46.2px;
+  letter-spacing: 0.015em;
+  text-align: left;
+}
+body .discount_item h3 {
+  font-family: "Josefin Sans";
+  color: #fb2e86;
+  font-size: 21px;
+  font-weight: 400;
+  line-height: 27.72px;
+  letter-spacing: 0.015em;
+  margin-top: 16px;
+  margin-bottom: 20px;
+}
+body .discount_item p {
+  font-family: "Lato";
+  font-size: 17px;
+  font-weight: 400;
+  line-height: 30px;
+  letter-spacing: 0.02em;
+  text-align: left;
+  color: #b7bacb;
+  margin-bottom: 28px;
+}
+body .discount_item .fa-check {
+  font-family: "Lato";
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 2.5;
+  letter-spacing: 0.02em;
+  text-align: left;
+  color: #b8b8dc;
+}
+body .discount_item img {
+  width: 450px;
+  height: 400px;
+}
+body .top_categories {
+  max-width: 1168px;
+  margin: 50px auto;
+}
+body .top_categories h1 {
+  margin: 0 auto;
+  text-align: center;
+  color: #1a0b5b;
+  margin-bottom: 20px;
+  font-family: "Josefin Sans", sans-serif;
+  font-weight: 700;
+  font-size: 42px;
+}
+body #categories_container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-row-gap: 50px;
+  justify-content: space-between;
+  max-width: 1168px;
+  margin: 56px auto;
+}
+body .product_top {
+  width: 269px;
+  height: 345px;
+  position: relative;
+}
+body .contain_pro {
+  width: 269px;
+  height: 269px;
+  border-radius: 50%;
+  background-color: #f6f7fb;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+body .product_top h3 {
+  text-align: center;
+  margin-top: 27px;
+  margin-bottom: 10px;
+  color: #151875;
+  font-family: "Josefin Sans", sans-serif;
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 20px;
+}
+body .product_top p {
+  text-align: center;
+  color: #151875;
+  font-family: "Josefin Sans";
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 16px;
+  text-align: center;
+}
+body .product_top .btn_view_detail {
+  background-color: #08d15f;
+  color: white;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  width: 94px;
+  height: 29px;
+  border-radius: 2px;
+  position: absolute;
+  left: 80px;
+  top: 198px;
+  display: none; /* Initially hidden */
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out; /* Smooth transition */
+}
+body .product_top:hover .btn_view_detail {
+  display: block;
+  opacity: 1;
+  margin: 10px 0 0 10px;
 }
