@@ -1093,6 +1093,7 @@ body {
     width: 269px;
     height: 345px;
     position: relative;
+    margin: auto;
   }
 
   .contain_pro {
@@ -1103,6 +1104,10 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
+    img {
+      width: 178px;
+      height: 178px;
+    }
   }
 
   .product_top h3 {
@@ -1150,4 +1155,18 @@ body {
     opacity: 1;
     margin: 10px 0 0 10px;
   }
+  .hover {
+    width: 269px;
+    height: 269px;
+    background-color: #d2109b;
+    border-radius: 50%;
+    position: absolute;
+    top: 6px;
+    left: -5px;
+    z-index: -1;
+    // opacity: 0;
+  }
+  // .hover:hover {
+  //   opacity: 1;
+  // }
 }

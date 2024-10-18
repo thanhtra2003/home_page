@@ -185,7 +185,9 @@ fetch('https://dummyjson.com/products')
       <h3>${product.title}</h3>
       <p> $${product.price}</p>
        <button class="btn_view_detail">View Detail</button>
+        <div class="hover"></div>
     </div>
+    
   `
       )
       .join('')

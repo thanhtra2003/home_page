@@ -124,6 +124,175 @@
 // .menu.active {
 //   color: red;
 // }
+
+//lll
+// .leatest-products {
+//   max-width: 1920px;
+//   margin: 0 auto;
+// }
+
+// h1 {
+//   font-family: 'Josefin Sans';
+//   font-size: 42px;
+//   font-weight: 700;
+//   line-height: 42px;
+//   text-align: center;
+//   margin-top: 70px;
+//   color: #1a0b5b;
+// }
+
+// .categories {
+//   display: flex;
+//   justify-content: center;
+//   margin-top: 19px;
+//   color: #151875; /*  sua o day  */
+// }
+
+// .categories span {
+//   font-family: 'Josefin Sans', sans-serif;
+//   font-size: 18px;
+//   font-weight: 600;
+//   margin-right: 25px;
+//   cursor: pointer;
+//   transition: color 0.3s;
+// }
+
+// .categories span:hover {
+//   text-decoration: underline;
+//   color: #fb2e86;
+// }
+
+// .products {
+//   display: flex;
+//   flex-wrap: wrap;
+//   margin: 0 auto;
+//   gap: 37px;
+//   margin-top: 62px;
+//   max-width: 1168px; //them
+// }
+
+// .product {
+//   background-color: #ffffff;
+//   box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.15);
+//   height: 306px;
+//   width: 360px;
+//   display: flex;
+//   flex-direction: column;
+//   position: relative;
+// }
+
+// .image-container {
+//   background-color: #f7f7f7;
+//   width: 360px;
+//   height: 269.96px;
+//   display: flex;
+//   align-items: center;
+//   justify-content: center;
+//   margin: 0;
+//   padding: 0;
+// }
+
+// .product img {
+//   width: 245px;
+//   height: 245px;
+//   border-radius: 8px;
+//   display: block;
+//   margin: auto;
+// }
+
+// .product-info {
+//   padding: 10px;
+//   display: flex;
+//   flex-direction: column;
+//   justify-content: space-between;
+//   flex-grow: 1;
+// }
+
+// .price-container {
+//   display: flex;
+//   align-items: center;
+//   justify-content: flex-end;
+//   margin-top: -8px;
+// }
+
+// .original-price {
+//   color: #fb2448;
+//   text-decoration: line-through;
+//   margin-right: 10px;
+//   margin-top: -15px;
+//   font-size: 12px;
+// }
+
+// .discount-price {
+//   color: #151875;
+//   margin-right: 10px;
+//   margin-top: -15px;
+//   font-size: 14px;
+// }
+// .product h2 {
+//   color: #151875;
+//   margin-top: 10px;
+//   margin-bottom: 10px;
+//   font-size: 16px;
+//   font-weight: 500;
+//   // line-height: 16px;
+//   font-family: 'Josefin Sans', sans-serif;
+//   margin-left: 5px;
+// }
+// .active-category {
+//   color: #fb2e86;
+//   font-weight: bold;
+// }
+// //hover
+// .icon-container {
+//   gap: 17px;
+//   position: absolute;
+//   top: 146px;
+//   left: 15px;
+//   display: grid;
+//   opacity: 0;
+//   width: 15px;
+//   height: 15px;
+//   cursor: pointer;
+// }
+// .sale-icon {
+//   display: block;
+//   width: 84px !important;
+//   height: 56px !important;
+//   position: absolute;
+//   top: -40px;
+//   left: 10px;
+//   border-radius: 0 !important;
+//   box-shadow: none !important;
+// }
+
+// .heart-icon {
+//   display: block;
+//   width: 17px !important;
+//   height: 17px !important;
+//   position: absolute;
+//   top: 100px;
+//   left: 10px;
+// }
+// .cart-icon {
+//   display: block;
+//   width: 30px !important;
+//   height: 30px !important;
+//   position: absolute;
+//   top: 60px;
+//   left: 5px;
+// }
+// .search-icon {
+//   display: block;
+//   width: 17px !important;
+//   height: 17px !important;
+//   position: absolute;
+//   top: 130px;
+//   left: 10px;
+// }
+// .product:hover .icon-container {
+//   opacity: 1;
+// }
 .leatest-products {
   max-width: 1920px;
   margin: 0 auto;
@@ -143,7 +312,8 @@ h1 {
   display: flex;
   justify-content: center;
   margin-top: 19px;
-  color: #151875; /*  sua o day  */
+  color: #151875;
+  gap: 58px;
 }
 
 .categories span {
@@ -166,7 +336,7 @@ h1 {
   margin: 0 auto;
   gap: 37px;
   margin-top: 62px;
-  max-width: 1168px; //them
+  max-width: 1168px;
 }
 
 .product {
@@ -177,25 +347,20 @@ h1 {
   display: flex;
   flex-direction: column;
   position: relative;
+  overflow: hidden;
 }
 
 .image-container {
   background-color: #f7f7f7;
-  width: 360px;
-  height: 269.96px;
+  width: 100%;
+  height: 270px;
   display: flex;
   align-items: center;
   justify-content: center;
-  margin: 0;
-  padding: 0;
 }
 
 .product img {
-  width: 245px;
-  height: 245px;
   border-radius: 8px;
-  display: block;
-  margin: auto;
 }
 
 .product-info {
@@ -227,67 +392,41 @@ h1 {
   margin-top: -15px;
   font-size: 14px;
 }
+
 .product h2 {
   color: #151875;
   margin-top: 10px;
   margin-bottom: 10px;
   font-size: 16px;
   font-weight: 500;
-  // line-height: 16px;
   font-family: 'Josefin Sans', sans-serif;
   margin-left: 5px;
 }
+
 .active-category {
   color: #fb2e86;
   font-weight: bold;
 }
-//hover
+
+/* Hover để hiển thị icon */
 .icon-container {
-  gap: 17px;
   position: absolute;
-  top: 155px;
-  left: 20px;
+  top: 146px;
+  left: 15px;
+  gap: 17px;
   display: grid;
   opacity: 0;
-  width: 15px;
-  height: 15px;
-  cursor: pointer;
-}
-.sale-icon {
-  display: block;
-  width: 84px !important;
-  height: 56px !important;
-  position: absolute;
-  top: -40px;
-  left: 10px;
-  border-radius: 0 !important;
-  box-shadow: none !important;
 }
 
-.heart-icon {
-  display: block;
-  width: 17px !important;
-  height: 17px !important;
-  position: absolute;
-  top: 100px;
-  left: 10px;
-}
-.cart-icon {
-  display: block;
-  width: 30px !important;
-  height: 30px !important;
-  position: absolute;
-  top: 60px;
-  left: 5px;
-}
+.heart-icon,
+.cart-icon,
 .search-icon {
-  display: block;
-  width: 17px !important;
-  height: 17px !important;
-  position: absolute;
-  top: 130px;
-  left: 10px;
+  width: 24px;
+  height: 24px;
+  cursor: pointer;
 }
+
 .product:hover .icon-container {
-  opacity: 1;
+  opacity: 1; /* Hiện các icon khi hover */
 }
+

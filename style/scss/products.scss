@@ -1,0 +1,243 @@
+body {
+  font-family: 'Poppins', sans-serif;
+  max-width: 1920px;
+  margin: 0 auto;
+  box-sizing: border-box;
+  .heading_bar {
+    background-color: blueviolet;
+    margin: auto;
+    .bar {
+      margin: 0 auto;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 445px;
+      color: #f1f1f1;
+      height: 44px;
+      width: 1240px;
+    }
+    .contact {
+      display: flex;
+      gap: 48px;
+      font-family: 'Josefin Sans';
+      font-size: 16px;
+      font-weight: 600;
+      line-height: normal;
+
+      .email {
+        display: flex;
+      }
+      .phone {
+        display: flex;
+      }
+      i {
+        margin-right: 10px;
+      }
+    }
+    .feature {
+      display: flex;
+      gap: 15px;
+      font-family: 'Josefin Sans';
+      font-size: 16px;
+      font-weight: 600;
+      line-height: 16px;
+      text-align: left;
+      .login {
+        display: flex;
+      }
+      .wishlist {
+        display: flex;
+      }
+      i {
+        margin-left: 3px;
+      }
+      .language,
+      .unit {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+    }
+  }
+  .nav_bar {
+    display: flex;
+    max-width: 1920px;
+    height: 80px;
+    justify-content: center;
+    align-items: center;
+    .main {
+      width: 1240px;
+      height: 40px;
+      display: flex;
+      margin: 0 auto;
+
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      h2 {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-right: 100px;
+        color: #0d0e43;
+        font-family: 'Josefin Sans';
+        font-size: 34px;
+        font-style: normal;
+        font-weight: 700;
+        line-height: normal;
+      }
+      .menu_nav {
+        display: flex;
+        align-items: center;
+        gap: 35px;
+        font-family: 'lato';
+        a {
+          text-decoration: none;
+        }
+        a:hover {
+          color: #fb2e86;
+        }
+      }
+
+      .search {
+        margin-left: 100px;
+        display: flex;
+        align-items: center;
+        width: 317px;
+        height: 40px;
+      }
+
+      .search_input {
+        border: none;
+        padding: 10px 20px;
+        font-size: 16px;
+        width: 100%;
+        border: solid 2px #e7e6ef;
+        border-right: none;
+      }
+
+      .search_button {
+        width: 51px;
+        height: 40px;
+        border: none;
+        cursor: pointer;
+        background-color: #fb2e86;
+        align-items: center;
+        display: flex;
+        justify-content: center;
+      }
+
+      .search_button i {
+        width: 20px;
+        height: 20px;
+        color: #f3f9ff;
+      }
+    }
+  }
+  .banner {
+    max-width: 1920px;
+    height: 286px;
+    background-color: #f6f5ff;
+    position: relative;
+  }
+  a {
+    text-decoration: none;
+  }
+  a:hover {
+    color: #fb2e86;
+  }
+  .banner h1 {
+    position: absolute;
+    font-family: 'Josefin Sans';
+    font-size: 36px;
+    font-weight: 700;
+    line-height: 36px;
+    text-align: center;
+    top: 96px;
+    left: 374px;
+    margin-bottom: 9px;
+  }
+
+  .banner span {
+    position: absolute;
+    font-family: 'Lato';
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 19.2px;
+    text-align: center;
+    top: 141px;
+  }
+
+  .banner span:nth-child(2) {
+    left: 375px;
+  }
+
+  .banner span:nth-child(3) {
+    left: 420px; /* Đặt khoảng cách từ span thứ 2 */
+  }
+
+  .banner span:nth-child(4) {
+    left: 465px; /* Đặt khoảng cách từ span thứ 3 */
+    color: #fb2e86;
+  }
+  .page_sort {
+    max-width: 1171px;
+    height: 44px;
+    margin: 0 auto;
+    margin-top: 124px;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    .title {
+      margin-right: 180px;
+      h3 {
+        font-family: 'Josefin Sans';
+        font-size: 22px;
+        font-weight: 700;
+        line-height: 22px;
+        text-align: left;
+        color: #151875;
+      }
+      p {
+        font-family: 'Lato';
+        font-size: 12px;
+        font-weight: 400;
+        line-height: 14.4px;
+        text-align: left;
+        color: #8a8fb9;
+      }
+    }
+    .feature {
+      gap: 27px;
+      display: flex;
+      font-family: 'Lato';
+      font-size: 16px;
+      font-weight: 400;
+      line-height: 19.2px;
+      text-align: left;
+      color: #3f509e;
+
+      .Per_Page {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        input {
+          width: 55px;
+          height: 25px;
+          background-color: #e7e6ef;
+          border: none;
+          margin-left: 15px;
+        }
+        .view {
+          width: 162px;
+          height: 30px;
+        }
+        svg {
+          gap: 15px;
+        }
+      }
+    }
+  }
+}

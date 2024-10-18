@@ -1005,6 +1005,7 @@ body .product_top {
   width: 269px;
   height: 345px;
   position: relative;
+  margin: auto;
 }
 body .contain_pro {
   width: 269px;
@@ -1014,6 +1015,10 @@ body .contain_pro {
   display: flex;
   align-items: center;
   justify-content: center;
+}
+body .contain_pro img {
+  width: 178px;
+  height: 178px;
 }
 body .product_top h3 {
   text-align: center;
@@ -1054,4 +1059,14 @@ body .product_top:hover .btn_view_detail {
   display: block;
   opacity: 1;
   margin: 10px 0 0 10px;
+}
+body .hover {
+  width: 269px;
+  height: 269px;
+  background-color: #d2109b;
+  border-radius: 50%;
+  position: absolute;
+  top: 6px;
+  left: -5px;
+  z-index: -1;
 }
