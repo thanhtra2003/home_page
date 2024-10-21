@@ -8,7 +8,6 @@ body {
   margin: 0 auto;
   box-sizing: border-box;
   /* Button styling */
-  /* Show button on hover */
 }
 body .heading_bar {
   background-color: blueviolet;
@@ -1051,9 +1050,9 @@ body .product_top .btn_view_detail {
   position: absolute;
   left: 80px;
   top: 198px;
-  display: none; /* Initially hidden */
+  display: none;
   opacity: 0;
-  transition: opacity 0.3s ease-in-out; /* Smooth transition */
+  transition: opacity 0.3s ease-in-out;
 }
 body .product_top:hover .btn_view_detail {
   display: block;
