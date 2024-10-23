@@ -277,16 +277,13 @@ function renderPagination(page) {
     pageButton.innerText = i
     pageButton.classList.add('pagination-button')
 
-    // Đặt màu active cho nút hiện tại
     if (i === page) {
       pageButton.classList.add('active')
     }
-
-    // Thêm sự kiện khi nhấn vào nút
     pageButton.addEventListener('click', () => {
       currentPage = i
       renderProducts(currentPage)
-      renderPagination(currentPage) // Cập nhật phân trang
+      renderPagination(currentPage)
     })
 
     paginationContainer.appendChild(pageButton)
@@ -296,9 +293,9 @@ function renderPagination(page) {
 // Tải sản phẩm khi trang được tải
 window.onload = async () => {
   const products = await fetchProducts()
-  document.getElementById('products-container').classList.add('grid') // Mặc định là grid
+  document.getElementById('products-container').classList.add('grid')
   renderProducts(currentPage)
-  renderPagination(currentPage) // Gọi hàm phân trang tại đây
+  renderPagination(currentPage)
 }
 
 // Đổi giữa grid và list
@@ -319,6 +316,6 @@ document.getElementById('list_products').addEventListener('click', async () => {
 // Tải sản phẩm khi trang được tải
 window.onload = async () => {
   const products = await fetchProducts()
-  document.getElementById('products-container').classList.add('grid') // Mặc định là grid
+  document.getElementById('products-container').classList.add('grid')
   renderProducts(currentPage)
 }
