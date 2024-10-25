@@ -4,139 +4,14 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Product List</title>
-    <link rel="stylesheet" href="styles.css" />
-    <style>
-      body {
-        font-family: Arial, sans-serif;
-      }
-
-      .container {
-        max-width: 1200px;
-        margin: 0 auto;
-        padding: 20px;
-      }
-
-      .view-toggle {
-        display: flex;
-        justify-content: flex-end;
-        margin-bottom: 20px;
-      }
-
-      .view-toggle button {
-        padding: 10px 20px;
-        margin-left: 10px;
-        cursor: pointer;
-      }
-
-      .view-toggle button.active {
-        background-color: #007bff;
-        color: white;
-      }
-
-      #product-container.grid {
-        display: grid;
-        grid-template-columns: repeat(3, 1fr);
-        gap: 20px;
-      }
-
-      #product-container.list {
-        display: block;
-      }
-
-      .product {
-        border: 1px solid #ccc;
-        padding: 20px;
-        border-radius: 8px;
-      }
-
-      .product img {
-        max-width: 100%;
-      }
-
-      .product .title {
-        font-size: 18px;
-        font-weight: bold;
-      }
-
-      .product .price {
-        color: #007bff;
-        margin-top: 10px;
-      }
-
-      .product.list {
-        display: flex;
-        align-items: center;
-        gap: 20px;
-      }
-
-      .product.list img {
-        max-width: 150px;
-      }
-    </style>
+    <link rel="stylesheet" href="style.css" />
   </head>
   <body>
-    <div class="container">
-      <div class="view-toggle">
-        <button id="grid-view" class="active">Grid View</button>
-        <button id="list-view">List View</button>
-      </div>
-      <div id="product-container" class="grid"></div>
-    </div>
+    <div id="product-list"></div>
 
+    <script src="./style/js/script.js"></script>
     <script>
-      const productContainer = document.getElementById('product-container')
-      const gridViewButton = document.getElementById('grid-view')
-      const listViewButton = document.getElementById('list-view')
-
-      // Fetch products from API
-      fetch('https://dummyjson.com/products?limit=12')
-        .then(response => response.json())
-        .then(data => {
-          const products = data.products
-          displayProducts(products, 'grid')
-        })
-        .catch(error => console.error('Error fetching products:', error))
-
-      // Display products based on view mode
-      function displayProducts(products, viewMode) {
-        productContainer.innerHTML = ''
-        products.forEach(product => {
-          const productElement = document.createElement('div')
-          productElement.classList.add('product', viewMode)
-          productElement.innerHTML = `
-      <img src="${product.thumbnail}" alt="${product.title}">
-      <div>
-        <div class="title">${product.title}</div>
-        <div class="price">$${product.price}</div>
-      </div>
-    `
-          productContainer.appendChild(productElement)
-        })
-      }
-
-      // Switch to grid view
-      gridViewButton.addEventListener('click', () => {
-        productContainer.classList.remove('list')
-        productContainer.classList.add('grid')
-        gridViewButton.classList.add('active')
-        listViewButton.classList.remove('active')
-
-        fetch('https://dummyjson.com/products?limit=12')
-          .then(response => response.json())
-          .then(data => displayProducts(data.products, 'grid'))
-      })
-
-      // Switch to list view
-      listViewButton.addEventListener('click', () => {
-        productContainer.classList.remove('grid')
-        productContainer.classList.add('list')
-        listViewButton.classList.add('active')
-        gridViewButton.classList.remove('active')
-
-        fetch('https://dummyjson.com/products?limit=12')
-          .then(response => response.json())
-          .then(data => displayProducts(data.products, 'list'))
-      })
+      displayProducts()
     </script>
   </body>
 </html>

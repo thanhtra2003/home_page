@@ -70,17 +70,21 @@ body {
       height: 40px;
 
       display: flex;
-      h2 {
+      h2 a {
+        a{
+          color: #0d0e43;
+        }
         display: flex;
         align-items: center;
         justify-content: center;
         margin-right: 100px;
-        color: #0d0e43;
+        
         font-family: 'Josefin Sans';
         font-size: 34px;
         font-style: normal;
         font-weight: 700;
         line-height: normal;
+        text-decoration: none;
       }
       .menu_nav {
         display: flex;

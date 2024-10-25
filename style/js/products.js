@@ -1,156 +1,23 @@
-// let currentPage = 1
-// const productsPerPage = 12
-// let allProducts = []
-
-// async function fetchProducts() {
-//   const response = await fetch('https://dummyjson.com/products?limit=48')
-//   const data = await response.json()
-//   allProducts = data.products
-//   return allProducts
-// }
-
-// function renderGrid(page) {
-//   const container = document.getElementById('products-containers_grid')
-//   container.innerHTML = ''
-//   container.classList.remove('list')
-//   container.classList.add('grid')
-
-//   const start = (page - 1) * productsPerPage
-//   const end = start + productsPerPage
-//   const productsToDisplay = allProducts.slice(start, end)
-
-//   productsToDisplay.forEach(product => {
-//     const productCard = document.createElement('div')
-//     productCard.classList.add('product-card')
-//     productCard.innerHTML = `
-//         <div class="product_card">
-//           <img class="img_pro" src=${product.thumbnail}>
-//           <div class="infor_pro">
-//             <span class="name">${product.title}</span>
-//             <div class="line">
-//               <div class="line_color1"></div>
-//               <div class="line_color2"></div>
-//               <div class="line_color3"></div>
-//             </div>
-
-//             <div class="price-container">
-//                     <p class="discount-price">$${product.discountPercentage}</p>
-//                     <p class="original-price">$${product.price}</p>
-//              </div>
-//           </div>
-//           <div class="icons">
-//             <img src="/assest/fluent_cart-24-regular.png">
-//             <img src="/assest/uil_heart-alt (1).png">
-//             <img src="/assest/uil_search-plus (1).png">
-//           </div>
-//           <button class="btn_view_detail">View Detail</button>
-//         </div>
-//       `
-//     container.appendChild(productCard)
-//   })
-
-//   container.style.display = 'grid'
-//   document.getElementById('products-containers_list').style.display = 'none'
-
-//   renderPagination(page)
-// }
-
-// function renderList(page) {
-//   const container = document.getElementById('products-containers_list')
-//   container.innerHTML = ''
-//   container.classList.remove('grid')
-//   container.classList.add('list')
-
-//   const start = (page - 1) * productsPerPage
-//   const end = start + productsPerPage
-//   const productsToDisplay = allProducts.slice(start, end)
-
-//   productsToDisplay.forEach(product => {
-//     const productCard = document.createElement('div')
-//     productCard.classList.add('product-card')
-//     productCard.innerHTML = `
-//         <div class="list-view">
-//             <div class="image">
-//             <img src="${product.thumbnail}" alt="${product.title}">
-//             </div>
-//             <div>
-//                 <h3>${product.title}</h3>
-//                 <div class="price-container">
-//                     <p class="discount-price">$${product.discountPercentage}</p>
-//                     <p class="original-price">$${product.price}</p>
-
-//                 </div>
-//                 <h4>${product.description}</h4>
-//                 <div class="list_icon">
-
-//             </div>
-//             </div>
-//         </div>
-//       `
-//     container.appendChild(productCard)
-//   })
-
-//   container.style.display = 'block'
-//   document.getElementById('products-containers_grid').style.display = 'none'
-
-//   renderPagination(page)
-// }
-
-// function renderPagination(page) {
-//   const totalPages = Math.ceil(allProducts.length / productsPerPage)
-//   const paginationContainer = document.querySelector('.pagination-dots')
-//   paginationContainer.innerHTML = ''
-
-//   for (let i = 1; i <= totalPages; i++) {
-//     const pageButton = document.createElement('button')
-//     pageButton.innerText = i
-//     pageButton.classList.add('pagination-button')
-//     if (i === page) {
-//       pageButton.classList.add('active')
-//     }
-//     pageButton.addEventListener('click', () => {
-//       currentPage = i
-//       if (document.getElementById('products-containers_grid').style.display === 'grid') {
-//         renderGrid(currentPage)
-//       } else {
-//         renderList(currentPage)
-//       }
-//     })
-//     paginationContainer.appendChild(pageButton)
-//   }
-// }
-
-// document.getElementById('grid_product').addEventListener('click', async () => {
-//   const products = await fetchProducts()
-//   renderGrid(currentPage)
-//   document.getElementById('grid_product').classList.add('active')
-//   document.getElementById('list_products').classList.remove('active')
-// })
-
-// document.getElementById('list_products').addEventListener('click', async () => {
-//   const products = await fetchProducts()
-//   renderList(currentPage)
-//   document.getElementById('list_products').classList.add('active')
-//   document.getElementById('grid_product').classList.remove('active')
-// })
-
-// window.onload = async () => {
-//   const products = await fetchProducts()
-//   renderGrid(currentPage)
-// }
-
 let currentPage = 1
-const productsPerPage = 12
+const productsPerPage = 48
 let allProducts = []
 
 // Lấy dữ liệu sản phẩm
 async function fetchProducts() {
-  const response = await fetch('https://dummyjson.com/products?limit=48')
-  const data = await response.json()
-  allProducts = data.products
+  let allProductsFetched = []
+  let skip = 0
+  let hasMore = true
+
+  while (hasMore) {
+    const response = await fetch(`https://dummyjson.com/products?limit=${productsPerPage}&skip=${skip}`)
+    const data = await response.json()
+    allProductsFetched = allProductsFetched.concat(data.products)
+    hasMore = data.products.length > 0 // Tiếp tục lấy nếu có thêm sản phẩm
+    skip += productsPerPage
+  }
+  allProducts = allProductsFetched
   return allProducts
 }
-
 // Hàm hiển thị sản phẩm
 function renderProducts(page) {
   const container = document.getElementById('products-container')
@@ -165,11 +32,11 @@ function renderProducts(page) {
     productCard.classList.add('product-card')
     productCard.innerHTML = `
         <div class="image">
-          <img src="${product.thumbnail}" alt="${product.title}">
+          <a href="detail_products.html?id=${product.id}"><img src="${product.thumbnail}" alt="${product.title}"></a>
         </div>
         <div class="contain">
           <div class="infor_pro">
-            <span class="name">${product.title}</span>
+            <span class="name"><a href="detail_products.html?id=${product.id}">${product.title}</a></span>
             <div class="line">
                 <div class="line_color1"></div>
                 <div class="line_color2"></div>
@@ -319,3 +186,24 @@ window.onload = async () => {
   document.getElementById('products-container').classList.add('grid')
   renderProducts(currentPage)
 }
+
+//Hiển thị chi tiết
+async function displayProductDetails() {
+  const params = new URLSearchParams(window.location.search)
+  const idProducts = params.get('id') // Lấy 'id' từ URL params
+
+  if (idProducts) {
+    const response = await fetch(`https://dummyjson.com/products/${idProducts}`)
+    const product = await response.json()
+    const productDetails = document.getElementById('product-details')
+
+    // Hiển thị chi tiết sản phẩm
+    productDetails.innerHTML = `
+            <h1>${product.title}</h1>
+            <p>Price: $${product.price}</p>
+            <p>Description: ${product.description}</p>
+            <img src="${product.thumbnail}" alt="${product.title}">
+          `
+  }
+}
+displayProductDetails()

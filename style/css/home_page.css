@@ -70,17 +70,20 @@ body .nav_bar .main {
   height: 40px;
   display: flex;
 }
-body .nav_bar .main h2 {
+body .nav_bar .main h2 a {
   display: flex;
   align-items: center;
   justify-content: center;
   margin-right: 100px;
-  color: #0d0e43;
   font-family: "Josefin Sans";
   font-size: 34px;
   font-style: normal;
   font-weight: 700;
   line-height: normal;
+  text-decoration: none;
+}
+body .nav_bar .main h2 a a {
+  color: #0d0e43;
 }
 body .nav_bar .main .menu_nav {
   display: flex;

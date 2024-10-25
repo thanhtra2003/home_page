@@ -18,7 +18,7 @@ function displayProducts(products) {
     <div class="product_card">
       <img class="img_pro" src=${product.thumbnail}>
       <div class="infor_pro">
-        <span class="name">${product.title}</span>
+        <span class="name"><a href="detail_products.html?id=${product.id}">${product.title}</a></span>
         <div class="line">
           <div class ="line_color1"></div>
           <div class ="line_color2"></div>
@@ -195,3 +195,23 @@ fetch('https://dummyjson.com/products')
     document.getElementById('categories_container').innerHTML = categoriesHTML
   })
   .catch(error => console.error('Lỗi khi lấy sản phẩm:', error))
+
+async function displayProductDetails() {
+  const params = new URLSearchParams(window.location.search)
+  const idProducts = params.get('id') // Lấy 'id' từ URL params
+
+  if (idProducts) {
+    const response = await fetch(`https://dummyjson.com/products/${idProducts}`)
+    const product = await response.json()
+    const productDetails = document.getElementById('product-details')
+
+    // Hiển thị chi tiết sản phẩm
+    productDetails.innerHTML = `
+            <h1>${product.title}</h1>
+            <p>Price: $${product.price}</p>
+            <p>Description: ${product.description}</p>
+            <img src="${product.thumbnail}" alt="${product.title}">
+          `
+  }
+}
+displayProductDetails()
