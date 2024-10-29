@@ -149,7 +149,7 @@ body {
     a:hover {
       color: #fb2e86;
     }
-     h1 {
+    h1 {
       position: absolute;
       font-family: 'Josefin Sans';
       font-size: 36px;
@@ -176,12 +176,436 @@ body {
     }
 
     span:nth-child(3) {
-      left: 420px; /* Đặt khoảng cách từ span thứ 2 */
+      left: 420px; 
     }
 
     span:nth-child(4) {
-      left: 465px; /* Đặt khoảng cách từ span thứ 3 */
+      left: 465px; 
       color: #fb2e86;
     }
+  }
+  #product-details {
+    max-width: 1170px;
+    margin: 0 auto;
+    background-color: #ffffff;
+    box-shadow: 0px 0px 25px 10px #f6f4fd;
+
+    display: flex;
+    margin-top: 121px;
+    .left {
+      display: flex;
+      margin: 13px 21px 13px 13px;
+
+      .image {
+        // Image nhỏ
+        display: grid;
+        width: 151px;
+        height: 155px;
+
+        row-gap: 11px;
+
+        img {
+          width: 151px;
+          height: 155px;
+          cursor: pointer;
+          background-color: #c4c4c4;
+        }
+      }
+
+      .thumbnail {
+        // Image lớn
+        width: 375px;
+        height: 487px;
+        background-color: #c4c4c4;
+        margin-left: 21px;
+        margin-right: 44px;
+
+        img {
+          width: 375px;
+          height: 487px;
+          object-fit: contain;
+        }
+      }
+    }
+
+    .right {
+      .title {
+        font-family: 'Josefin Sans';
+        font-size: 36px;
+        font-weight: 600;
+        line-height: 36px;
+        color: #0d134e;
+        margin-top: 74px;
+      }
+      .price {
+        display: flex;
+        margin-top: 14px;
+        gap: 18px;
+        .discount {
+          color: #151875;
+          font-family: Josefin Sans;
+          font-size: 16px;
+          font-weight: 400;
+          line-height: 29px;
+          text-align: left;
+        }
+        .origin {
+          color: #fb2e86;
+          font-family: Josefin Sans;
+          font-size: 16px;
+          font-weight: 400;
+          line-height: 29px;
+          text-align: left;
+
+          text-decoration: line-through;
+        }
+      }
+      .color {
+        font-family: 'Josefin Sans';
+        font-size: 16px;
+        font-weight: 600;
+        line-height: 16px;
+        margin-top: 12px;
+        color: #0d134e;
+      }
+      .description {
+        font-family: 'Josefin Sans';
+        font-size: 16px;
+        font-weight: 600;
+        line-height: 29px;
+        text-align: left;
+        color: #a9acc6;
+        margin-top: 12px;
+      }
+      .add {
+        display: flex;
+        align-items: center;
+        margin-top: 31px;
+        gap: 5px;
+        // justify-content: center;
+        button {
+          width: 134px;
+          height: 39px;
+          background-color: #fb2e86;
+          border-radius: 2px 0px 0px 0px;
+          font-family: 'Josefin Sans';
+          font-size: 16px;
+          font-weight: 400;
+          line-height: 39px;
+          border: none;
+          color: #ffffff;
+          cursor: pointer;
+        }
+      }
+      .cate {
+        display: flex;
+        margin-top: 10px;
+        font-family: 'Josefin Sans';
+        font-size: 16px;
+        font-weight: 600;
+        line-height: 29px;
+        text-align: left;
+        color: #151875;
+        .social {
+          margin-left: 10px;
+          img {
+            width: 12px;
+            height: 12px;
+          }
+        }
+      }
+    }
+  }
+  .detail {
+    max-width: 1920px;
+    background-color: #f9f8fe;
+    margin-top: 130px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    .container {
+      max-width: 1170px;
+      margin: 0 auto;
+      margin-top: 109px;
+      ul {
+        display: flex;
+        gap: 85px;
+        margin-bottom: 61px;
+        li {
+          font-family: 'Josefin Sans';
+          font-size: 24px;
+          font-weight: 600;
+          line-height: 24px;
+          text-align: left;
+          color: #151875;
+          cursor: pointer;
+        }
+      }
+      ul li:first-child {
+        text-decoration: underline;
+      }
+      .varius {
+        margin-bottom: 36px;
+        h4 {
+          margin-bottom: 14px;
+          font-family: Josefin Sans;
+          font-size: 22px;
+          font-weight: 600;
+          line-height: 22px;
+          text-align: left;
+          color: #151875;
+        }
+        p {
+          font-family: Josefin Sans;
+          font-size: 16px;
+          font-weight: 600;
+          line-height: 29px;
+          text-align: left;
+          color: #a9acc6;
+        }
+      }
+      .more_detail {
+        margin-bottom: 122px;
+        h4 {
+          margin-bottom: 14px;
+          font-family: Josefin Sans;
+          font-size: 22px;
+          font-weight: 600;
+          line-height: 22px;
+          text-align: left;
+          color: #151875;
+        }
+        .content {
+          display: flex;
+          justify-content: center;
+          .icon {
+            display: grid;
+          }
+          .icon_content {
+            p {
+              margin-bottom: 14px;
+              font-family: Josefin Sans;
+              font-size: 16px;
+              font-weight: 600;
+              line-height: 29px;
+              text-align: left;
+              color: #a9acc6;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .trending_products {
+    max-width: 1168px;
+    margin: auto;
+    margin-top: 58px;
+    margin-top: 126px;
+    h1 {
+      color: #1a0b5b;
+      font-family: 'Josefin Sans';
+      font-size: 36px;
+      font-weight: 700;
+      line-height: 36px;
+      margin-bottom: 47px;
+    }
+  }
+  #container_trending {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    gap: 20px;
+    .product_trend {
+      width: 270px;
+      height: 350px;
+      background-color: #ffffff;
+      box-shadow: 0px 0px 25px 0px rgba(0, 0, 0, 0.1);
+      box-sizing: border-box;
+      position: relative;
+      overflow: hidden; /* Ẩn phần nội dung tràn ra ngoài */
+    }
+    .pading {
+      height: 340px;
+
+      align-items: center;
+      display: flex;
+      justify-content: center;
+      margin: 0 auto;
+      height: 270px;
+
+      background-color: #f5f6f8;
+    }
+
+    .image_trend {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .image_trend img {
+      width: 171px;
+      height: 171px;
+    }
+
+    .infor_pro {
+      font-family: 'Josefin Sans', sans-serif;
+      width: 100%;
+      margin-top: 15px;
+      margin-left: 5px;
+      .price_title {
+        display: flex;
+        align-items: center;
+        // justify-content: center;
+      }
+    }
+
+    .infor_pro h3.title {
+      font-family: 'Lato';
+      font-size: 16px;
+      font-weight: 700;
+      line-height: 25.6px;
+      margin-bottom: 8px;
+      white-space: nowrap; /* Ngăn không cho xuống dòng */
+      overflow: hidden; /* Ẩn nội dung vượt quá */
+      text-overflow: ellipsis; /* Hiển thị dấu ba chấm khi nội dung dài */
+      margin-right: 48px;
+    }
+
+    .price_trend {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 12px;
+    }
+  }
+  .brand {
+    max-width: 1920px;
+    text-align: center;
+    margin-top: 96px;
+    img {
+      width: 904px;
+      height: 93px;
+      // margin: auto;
+    }
+  }
+  .footer {
+    background-color: #f7f7fb;
+    max-width: 1920px;
+    margin-top: 115px;
+  }
+
+  .footer-container {
+    display: flex;
+    justify-content: space-around;
+    margin: auto;
+    width: 1168px;
+    // margin-top: 94px;
+  }
+
+  .footer-section {
+    margin-top: 95px;
+    margin-bottom: 101px;
+  }
+
+  .footer-section h3 {
+    font-family: 'Josefin Sans';
+    font-size: 22px;
+    font-weight: 600;
+    line-height: 22px;
+    margin-bottom: 42px;
+  }
+  .footer-section h2 {
+    font-family: 'Josefin Sans';
+    font-size: 38px;
+    font-weight: 700;
+    line-height: 38px;
+    text-align: left;
+  }
+
+  .footer-section p {
+    color: #8e8e8e;
+    margin-bottom: 10px;
+    font-family: 'Lato';
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 19.2px;
+    text-align: left;
+  }
+
+  .footer-section ul {
+    list-style-type: none;
+    padding: 0;
+  }
+
+  .footer-section ul li {
+    margin-bottom: 21px;
+    font-family: 'Lato';
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 19.2px;
+    text-align: left;
+  }
+
+  .footer-section ul li a {
+    text-decoration: none;
+    color: #6d6d6d;
+  }
+
+  .footer-section ul li a:hover {
+    color: #2d2d2d;
+  }
+
+  .footer .subscribe {
+    display: flex;
+    margin-bottom: 25px;
+    margin-top: 31px;
+    width: 377px;
+    height: 44px;
+  }
+
+  .footer .subscribe input[type='email'] {
+    padding: 10px;
+    flex: 1;
+    border: 1px solid #e0e0e0;
+
+    outline: none;
+  }
+
+  .footer .subscribe button {
+    padding: 10px;
+    background-color: #fb2e86;
+    color: #fff;
+    border: none;
+    border-radius: 0 5px 5px 0;
+    cursor: pointer;
+  }
+
+  .footer .subscribe button:hover {
+    background-color: #d12270;
+  }
+  .footerbottom {
+    max-width: 1920px;
+    margin: auto;
+    background-color: #e0d9f5;
+  }
+  .footer-bottom {
+    display: flex;
+    justify-content: space-between;
+
+    align-items: center;
+    height: 53px;
+    width: 535px;
+    margin: auto;
+  }
+
+  .footer-bottom p {
+    color: #8e8e8e;
+    margin: 0;
+  }
+
+  .footer-socials a {
+    margin: 0 5px;
+    color: #3f3f3f;
   }
 }

@@ -169,9 +169,392 @@ body .banner span:nth-child(2) {
   left: 375px;
 }
 body .banner span:nth-child(3) {
-  left: 420px; /* Đặt khoảng cách từ span thứ 2 */
+  left: 420px;
 }
 body .banner span:nth-child(4) {
-  left: 465px; /* Đặt khoảng cách từ span thứ 3 */
+  left: 465px;
   color: #fb2e86;
+}
+body #product-details {
+  max-width: 1170px;
+  margin: 0 auto;
+  background-color: #ffffff;
+  box-shadow: 0px 0px 25px 10px #f6f4fd;
+  display: flex;
+  margin-top: 121px;
+}
+body #product-details .left {
+  display: flex;
+  margin: 13px 21px 13px 13px;
+}
+body #product-details .left .image {
+  display: grid;
+  width: 151px;
+  height: 155px;
+  row-gap: 11px;
+}
+body #product-details .left .image img {
+  width: 151px;
+  height: 155px;
+  cursor: pointer;
+  background-color: #c4c4c4;
+}
+body #product-details .left .thumbnail {
+  width: 375px;
+  height: 487px;
+  background-color: #c4c4c4;
+  margin-left: 21px;
+  margin-right: 44px;
+}
+body #product-details .left .thumbnail img {
+  width: 375px;
+  height: 487px;
+  -o-object-fit: contain;
+     object-fit: contain;
+}
+body #product-details .right .title {
+  font-family: "Josefin Sans";
+  font-size: 36px;
+  font-weight: 600;
+  line-height: 36px;
+  color: #0d134e;
+  margin-top: 74px;
+}
+body #product-details .right .price {
+  display: flex;
+  margin-top: 14px;
+  gap: 18px;
+}
+body #product-details .right .price .discount {
+  color: #151875;
+  font-family: Josefin Sans;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 29px;
+  text-align: left;
+}
+body #product-details .right .price .origin {
+  color: #fb2e86;
+  font-family: Josefin Sans;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 29px;
+  text-align: left;
+  text-decoration: line-through;
+}
+body #product-details .right .color {
+  font-family: "Josefin Sans";
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 16px;
+  margin-top: 12px;
+  color: #0d134e;
+}
+body #product-details .right .description {
+  font-family: "Josefin Sans";
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 29px;
+  text-align: left;
+  color: #a9acc6;
+  margin-top: 12px;
+}
+body #product-details .right .add {
+  display: flex;
+  align-items: center;
+  margin-top: 31px;
+  gap: 5px;
+}
+body #product-details .right .add button {
+  width: 134px;
+  height: 39px;
+  background-color: #fb2e86;
+  border-radius: 2px 0px 0px 0px;
+  font-family: "Josefin Sans";
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 39px;
+  border: none;
+  color: #ffffff;
+  cursor: pointer;
+}
+body #product-details .right .cate {
+  display: flex;
+  margin-top: 10px;
+  font-family: "Josefin Sans";
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 29px;
+  text-align: left;
+  color: #151875;
+}
+body #product-details .right .cate .social {
+  margin-left: 10px;
+}
+body #product-details .right .cate .social img {
+  width: 12px;
+  height: 12px;
+}
+body .detail {
+  max-width: 1920px;
+  background-color: #f9f8fe;
+  margin-top: 130px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+body .detail .container {
+  max-width: 1170px;
+  margin: 0 auto;
+  margin-top: 109px;
+}
+body .detail .container ul {
+  display: flex;
+  gap: 85px;
+  margin-bottom: 61px;
+}
+body .detail .container ul li {
+  font-family: "Josefin Sans";
+  font-size: 24px;
+  font-weight: 600;
+  line-height: 24px;
+  text-align: left;
+  color: #151875;
+  cursor: pointer;
+}
+body .detail .container ul li:first-child {
+  text-decoration: underline;
+}
+body .detail .container .varius {
+  margin-bottom: 36px;
+}
+body .detail .container .varius h4 {
+  margin-bottom: 14px;
+  font-family: Josefin Sans;
+  font-size: 22px;
+  font-weight: 600;
+  line-height: 22px;
+  text-align: left;
+  color: #151875;
+}
+body .detail .container .varius p {
+  font-family: Josefin Sans;
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 29px;
+  text-align: left;
+  color: #a9acc6;
+}
+body .detail .container .more_detail {
+  margin-bottom: 122px;
+}
+body .detail .container .more_detail h4 {
+  margin-bottom: 14px;
+  font-family: Josefin Sans;
+  font-size: 22px;
+  font-weight: 600;
+  line-height: 22px;
+  text-align: left;
+  color: #151875;
+}
+body .detail .container .more_detail .content {
+  display: flex;
+  justify-content: center;
+}
+body .detail .container .more_detail .content .icon {
+  display: grid;
+}
+body .detail .container .more_detail .content .icon_content p {
+  margin-bottom: 14px;
+  font-family: Josefin Sans;
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 29px;
+  text-align: left;
+  color: #a9acc6;
+}
+body .trending_products {
+  max-width: 1168px;
+  margin: auto;
+  margin-top: 58px;
+  margin-top: 126px;
+}
+body .trending_products h1 {
+  color: #1a0b5b;
+  font-family: "Josefin Sans";
+  font-size: 36px;
+  font-weight: 700;
+  line-height: 36px;
+  margin-bottom: 47px;
+}
+body #container_trending {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+body #container_trending .product_trend {
+  width: 270px;
+  height: 350px;
+  background-color: #ffffff;
+  box-shadow: 0px 0px 25px 0px rgba(0, 0, 0, 0.1);
+  box-sizing: border-box;
+  position: relative;
+  overflow: hidden; /* Ẩn phần nội dung tràn ra ngoài */
+}
+body #container_trending .pading {
+  height: 340px;
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  margin: 0 auto;
+  height: 270px;
+  background-color: #f5f6f8;
+}
+body #container_trending .image_trend {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+body #container_trending .image_trend img {
+  width: 171px;
+  height: 171px;
+}
+body #container_trending .infor_pro {
+  font-family: "Josefin Sans", sans-serif;
+  width: 100%;
+  margin-top: 15px;
+  margin-left: 5px;
+}
+body #container_trending .infor_pro .price_title {
+  display: flex;
+  align-items: center;
+}
+body #container_trending .infor_pro h3.title {
+  font-family: "Lato";
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 25.6px;
+  margin-bottom: 8px;
+  white-space: nowrap; /* Ngăn không cho xuống dòng */
+  overflow: hidden; /* Ẩn nội dung vượt quá */
+  text-overflow: ellipsis; /* Hiển thị dấu ba chấm khi nội dung dài */
+  margin-right: 48px;
+}
+body #container_trending .price_trend {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+}
+body .brand {
+  max-width: 1920px;
+  text-align: center;
+  margin-top: 96px;
+}
+body .brand img {
+  width: 904px;
+  height: 93px;
+}
+body .footer {
+  background-color: #f7f7fb;
+  max-width: 1920px;
+  margin-top: 115px;
+}
+body .footer-container {
+  display: flex;
+  justify-content: space-around;
+  margin: auto;
+  width: 1168px;
+}
+body .footer-section {
+  margin-top: 95px;
+  margin-bottom: 101px;
+}
+body .footer-section h3 {
+  font-family: "Josefin Sans";
+  font-size: 22px;
+  font-weight: 600;
+  line-height: 22px;
+  margin-bottom: 42px;
+}
+body .footer-section h2 {
+  font-family: "Josefin Sans";
+  font-size: 38px;
+  font-weight: 700;
+  line-height: 38px;
+  text-align: left;
+}
+body .footer-section p {
+  color: #8e8e8e;
+  margin-bottom: 10px;
+  font-family: "Lato";
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 19.2px;
+  text-align: left;
+}
+body .footer-section ul {
+  list-style-type: none;
+  padding: 0;
+}
+body .footer-section ul li {
+  margin-bottom: 21px;
+  font-family: "Lato";
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 19.2px;
+  text-align: left;
+}
+body .footer-section ul li a {
+  text-decoration: none;
+  color: #6d6d6d;
+}
+body .footer-section ul li a:hover {
+  color: #2d2d2d;
+}
+body .footer .subscribe {
+  display: flex;
+  margin-bottom: 25px;
+  margin-top: 31px;
+  width: 377px;
+  height: 44px;
+}
+body .footer .subscribe input[type=email] {
+  padding: 10px;
+  flex: 1;
+  border: 1px solid #e0e0e0;
+  outline: none;
+}
+body .footer .subscribe button {
+  padding: 10px;
+  background-color: #fb2e86;
+  color: #fff;
+  border: none;
+  border-radius: 0 5px 5px 0;
+  cursor: pointer;
+}
+body .footer .subscribe button:hover {
+  background-color: #d12270;
+}
+body .footerbottom {
+  max-width: 1920px;
+  margin: auto;
+  background-color: #e0d9f5;
+}
+body .footer-bottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 53px;
+  width: 535px;
+  margin: auto;
+}
+body .footer-bottom p {
+  color: #8e8e8e;
+  margin: 0;
+}
+body .footer-socials a {
+  margin: 0 5px;
+  color: #3f3f3f;
 }

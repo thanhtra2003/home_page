@@ -196,22 +196,22 @@ fetch('https://dummyjson.com/products')
   })
   .catch(error => console.error('Lỗi khi lấy sản phẩm:', error))
 
-async function displayProductDetails() {
-  const params = new URLSearchParams(window.location.search)
-  const idProducts = params.get('id') // Lấy 'id' từ URL params
+// async function displayProductDetails() {
+//   const params = new URLSearchParams(window.location.search)
+//   const idProducts = params.get('id') // Lấy 'id' từ URL params
 
-  if (idProducts) {
-    const response = await fetch(`https://dummyjson.com/products/${idProducts}`)
-    const product = await response.json()
-    const productDetails = document.getElementById('product-details')
+//   if (idProducts) {
+//     const response = await fetch(`https://dummyjson.com/products/${idProducts}`)
+//     const product = await response.json()
+//     const productDetails = document.getElementById('product-details')
 
-    // Hiển thị chi tiết sản phẩm
-    productDetails.innerHTML = `
-            <h1>${product.title}</h1>
-            <p>Price: $${product.price}</p>
-            <p>Description: ${product.description}</p>
-            <img src="${product.thumbnail}" alt="${product.title}">
-          `
-  }
-}
-displayProductDetails()
+//     // Hiển thị chi tiết sản phẩm
+//     productDetails.innerHTML = `
+//             <h1>${product.title}</h1>
+//             <p>Price: $${product.price}</p>
+//             <p>Description: ${product.description}</p>
+//             <img src="${product.thumbnail}" alt="${product.title}">
+//           `
+//   }
+// }
+// displayProductDetails()
