@@ -1,0 +1,406 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100..700;1,100..700&display=swap" rel="stylesheet');
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100..700;1,100..700&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap" rel="stylesheet');
+body {
+  font-family: 'Poppins', sans-serif;
+  max-width: 1920px;
+  margin: 0 auto;
+  box-sizing: border-box;
+  .heading_bar {
+    background-color: blueviolet;
+    margin: auto;
+    .bar {
+      margin: 0 auto;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 445px;
+      color: #f1f1f1;
+      height: 44px;
+      width: 1240px;
+    }
+    .contact {
+      display: flex;
+      gap: 48px;
+      font-family: 'Josefin Sans';
+      font-size: 16px;
+      font-weight: 600;
+      line-height: normal;
+
+      .email {
+        display: flex;
+      }
+      .phone {
+        display: flex;
+      }
+      i {
+        margin-right: 10px;
+      }
+    }
+    .feature {
+      display: flex;
+      gap: 15px;
+      font-family: 'Josefin Sans';
+      font-size: 16px;
+      font-weight: 600;
+      line-height: 16px;
+      text-align: left;
+      .login {
+        display: flex;
+      }
+      .wishlist {
+        display: flex;
+      }
+      i {
+        margin-left: 3px;
+      }
+      .language,
+      .unit {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+    }
+  }
+  .nav_bar {
+    display: flex;
+    max-width: 1920px;
+    height: 80px;
+    justify-content: center;
+    align-items: center;
+    .main {
+      width: 1240px;
+      height: 40px;
+      display: flex;
+      margin: 0 auto;
+
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      h2 {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-right: 100px;
+        color: #0d0e43;
+        font-family: 'Josefin Sans';
+        font-size: 34px;
+        font-style: normal;
+        font-weight: 700;
+        line-height: normal;
+      }
+      .menu_nav {
+        display: flex;
+        align-items: center;
+        gap: 35px;
+        font-family: 'lato';
+        a {
+          text-decoration: none;
+        }
+        a:hover {
+          color: #fb2e86;
+        }
+      }
+
+      .search {
+        margin-left: 100px;
+        display: flex;
+        align-items: center;
+        width: 317px;
+        height: 40px;
+      }
+
+      .search_input {
+        border: none;
+        padding: 10px 20px;
+        font-size: 16px;
+        width: 100%;
+        border: solid 2px #e7e6ef;
+        border-right: none;
+      }
+
+      .search_button {
+        width: 51px;
+        height: 40px;
+        border: none;
+        cursor: pointer;
+        background-color: #fb2e86;
+        align-items: center;
+        display: flex;
+        justify-content: center;
+      }
+
+      .search_button i {
+        width: 20px;
+        height: 20px;
+        color: #f3f9ff;
+      }
+    }
+  }
+  .banner {
+    max-width: 1920px;
+    height: 286px;
+    background-color: #f6f5ff;
+    position: relative;
+    a {
+      text-decoration: none;
+    }
+    a:hover {
+      color: #fb2e86;
+    }
+    h1 {
+      position: absolute;
+      font-family: 'Josefin Sans';
+      font-size: 36px;
+      font-weight: 700;
+      line-height: 36px;
+      text-align: center;
+      top: 96px;
+      left: 374px;
+      margin-bottom: 9px;
+    }
+
+    span {
+      position: absolute;
+      font-family: 'Lato';
+      font-size: 16px;
+      font-weight: 500;
+      line-height: 19.2px;
+      text-align: center;
+      top: 141px;
+    }
+
+    span:nth-child(2) {
+      left: 375px;
+    }
+
+    span:nth-child(3) {
+      left: 420px;
+    }
+
+    span:nth-child(4) {
+      left: 465px;
+      color: #fb2e86;
+    }
+  }
+  //   .cart-container {
+  //     display: flex;
+  //     // justify-content: space-between;
+  //     max-width: 1170px;
+  //     margin: auto;
+  //     margin-top: 131px;
+  //     background-color: #fff;
+  //     border-radius: 8px;
+  //     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  //   }
+
+  //   .cart-table {
+  //     width: 70%;
+  //     border-collapse: collapse;
+  //   }
+
+  //   .cart-table th,
+  //   .cart-table td {
+  //     padding: 15px;
+  //     text-align: left;
+  //   }
+
+  //   .cart-table th {
+  //     font-weight: bold;
+  //     color: #333;
+  //   }
+  //   .cart-totals {
+  //     width: 25%;
+  //     padding: 20px;
+  //     background-color: #f9f9ff;
+  //     border-radius: 8px;
+  // }
+
+  // .cart-totals h3 {
+  //     margin-top: 0;
+  //     font-size: 18px;
+  //     font-weight: bold;
+  //     color: #333;
+  // }
+
+  // .totals-line {
+  //     display: flex;
+  //     justify-content: space-between;
+  //     margin-bottom: 10px;
+  //     font-size: 16px;
+  // }
+
+  // .shipping-info {
+  //     font-size: 14px;
+  //     color: #777;
+  //     margin-bottom: 20px;
+  // }
+
+  // .checkout-btn {
+  //     width: 100%;
+  //     padding: 10px;
+  //     background-color: #28a745;
+  //     color: #fff;
+  //     border: none;
+  //     border-radius: 5px;
+  //     font-size: 16px;
+  //     cursor: pointer;
+  // }
+
+  // .checkout-btn:hover {
+  //     background-color: #218838;
+  // }
+
+  .cart-container {
+    max-width: 1170px;
+    margin: 131px auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    display: flex;
+    .cart-table {
+      width: 70%;
+      border-collapse: collapse;
+
+      th,
+      td {
+        padding: 15px;
+        text-align: left;
+      }
+      th {
+        font-family: 'Josefin Sans';
+        font-size: 20px;
+        font-weight: 700;
+        line-height: 20px;
+        text-align: left;
+
+        color: #1d3178;
+      }
+    }
+    .cart-totals {
+      padding: 15px;
+      background-color: #f9f9ff;
+      border-radius: 8px;
+      width: 30%;
+      margin-left: 20px;
+      p {
+        font-size: 18px;
+        font-weight: bold;
+        color: #1d3178;
+        font-family: 'Josefin Sans';
+        font-size: 20px;
+        font-weight: 700;
+        line-height: 20px;
+        text-align: left;
+        margin-bottom: 42px;
+      }
+      .totals-line {
+        display: flex;
+        justify-content: space-between;
+        font-size: 16px;
+        border-bottom: 1px solid #ccc;
+        span {
+          font-family: 'Lato';
+          font-size: 18px;
+          font-weight: 600;
+          line-height: 21.6px;
+          text-align: left;
+          color: #1d3178;
+        }
+      }
+      .checkout-btn {
+        width: 100%;
+        padding: 10px;
+        background-color: #28a745;
+        color: #fff;
+        border: none;
+        border-radius: 5px;
+        font-size: 16px;
+        cursor: pointer;
+        margin-top: 10px;
+        margin-top: 80px;
+      }
+      .checkout-btn:hover {
+        background-color: #218838;
+      }
+    }
+  }
+  .product_cart {
+    position: relative;
+    display: flex;
+    .cart-img {
+      width: 87px;
+      height: 87px;
+    }
+    .remove-btn {
+      position: absolute;
+    }
+    .contain_pro {
+      display: grid;
+      span {
+        font-family: 'Josefin Sans';
+        font-size: 14px;
+        font-weight: 400;
+        line-height: 14px;
+        text-align: left;
+      }
+      p {
+        color: #a1a8c1;
+        font-family: 'Josefin Sans';
+        font-size: 12px;
+        font-weight: 400;
+        line-height: 12px;
+        text-align: left;
+      }
+    }
+
+  }
+  .price{
+    font-family: 'Josefin Sans';
+font-size: 14px;
+font-weight: 400;
+line-height: 14px;
+text-align: left;
+color: #15245E;
+  }
+  #cart-items tr {
+    border-bottom: 1px solid;
+  }
+}
+.quantity-control {
+    display: flex;
+    align-items: center;
+    border: 1px solid #e0e0e0;
+    border-radius: 4px;
+    overflow: hidden;
+    width: 100px;
+  }
+  
+  .quantity-btn {
+    background-color: #f0f0f0;
+    border: none;
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+    font-size: 16px;
+    color: #888;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .quantity-btn:hover {
+    background-color: #e0e0e0;
+  }
+  
+  .quantity-input {
+    width: 40px;
+    text-align: center;
+    border: none;
+    background-color: #f8f8f8;
+    font-size: 16px;
+    color: #333;
+  }
+  

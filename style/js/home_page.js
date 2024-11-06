@@ -10,35 +10,72 @@ async function fetchFeaturedProducts() {
   createPaginationDots()
 }
 
+// Hàm hiển thị sản phẩm
 function displayProducts(products) {
   const container = document.getElementById('products-containers')
   container.innerHTML = ''
   products.forEach(product => {
-    const productCard = `
-    <div class="product_card">
-      <img class="img_pro" src=${product.thumbnail}>
+    const productCard = document.createElement('div')
+    productCard.classList.add('product_card')
+
+    productCard.innerHTML = `
+      <img class="img_pro" src="${product.thumbnail}">
       <div class="infor_pro">
         <span class="name"><a href="detail_products.html?id=${product.id}">${product.title}</a></span>
         <div class="line">
-          <div class ="line_color1"></div>
-          <div class ="line_color2"></div>
-          <div class ="line_color3"></div>
+          <div class="line_color1"></div>
+          <div class="line_color2"></div>
+          <div class="line_color3"></div>
         </div>
         <span class="code">Code - ${product.sku}</span>
         <span class="price">$${product.price}</span>
       </div>
-    <!-- Icons giỏ hàng và yêu thích -->
+      <!-- Icons giỏ hàng và yêu thích -->
       <div class="icons">
-        <img src="/assest/fluent_cart-24-regular.png">
+        <img src="/assest/fluent_cart-24-regular.png" class="cart-icon" 
+             data-product-id="${product.id}" 
+             data-product-name="${product.title}" 
+             data-product-price="${product.price}" 
+             data-product-thumbnail="${product.thumbnail}">
         <img src="/assest/uil_heart-alt (1).png">
         <img src="/assest/uil_search-plus (1).png">
       </div>
-    <!-- Button View Detail -->
+      <!-- Button View Detail -->
       <button class="btn_view_detail">View Detail</button>
-</div>`
+    `
 
-    container.innerHTML += productCard
+    container.appendChild(productCard)
   })
+
+  // Gắn sự kiện cho icon giỏ hàng
+  const cartIcons = document.querySelectorAll('.cart-icon')
+  cartIcons.forEach(icon => {
+    icon.addEventListener('click', addToCart)
+  })
+}
+
+function addToCart(event) {
+  const icon = event.target
+  const product = {
+    id: icon.getAttribute('data-product-id'),
+    name: icon.getAttribute('data-product-name'),
+    price: parseFloat(icon.getAttribute('data-product-price')),
+    thumbnail: icon.getAttribute('data-product-thumbnail'),
+    quantity: 1
+  }
+
+  let cart = JSON.parse(localStorage.getItem('cart')) || []
+
+  const existingProductIndex = cart.findIndex(item => item.id === product.id)
+  if (existingProductIndex > -1) {
+    cart[existingProductIndex].quantity += 1
+  } else {
+    cart.push(product)
+  }
+
+  localStorage.setItem('cart', JSON.stringify(cart))
+
+  alert(`${product.name} đã được thêm vào giỏ hàng!`)
 }
 
 function createPaginationDots() {
