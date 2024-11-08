@@ -55,6 +55,10 @@ body .heading_bar .feature .login {
 body .heading_bar .feature .wishlist {
   display: flex;
 }
+body .heading_bar .feature .cart a {
+  text-decoration: none;
+  color: white;
+}
 body .heading_bar .feature i {
   margin-left: 3px;
 }
@@ -252,6 +256,9 @@ body .name {
   font-size: 18px;
   font-weight: 700;
 }
+body .name a {
+  text-decoration: none;
+}
 body .name:hover {
   color: #fb2e86;
 }
@@ -343,7 +350,7 @@ body .product_card:hover .btn_view_detail {
 body .product_card:hover {
   background-color: #2f1ac4;
 }
-body .product_card:hover .name {
+body .product_card:hover .name a {
   color: #ffffff;
 }
 body .product_card:hover .code {

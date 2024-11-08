@@ -54,6 +54,10 @@ body {
       .wishlist {
         display: flex;
       }
+      .cart a{
+        text-decoration: none;
+        color: white;
+      }
       i {
         margin-left: 3px;
       }
@@ -262,12 +266,16 @@ body {
     gap: 12px;
     margin-top: 15px;
     align-items: center;
+   
   }
 
   .name {
     font-family: 'lato';
     font-size: 18px;
     font-weight: 700;
+    a{
+      text-decoration: none;
+    }
   }
   .name:hover {
     color: #fb2e86;
@@ -363,7 +371,7 @@ body {
   }
   .product_card:hover {
     background-color: #2f1ac4;
-    .name {
+    .name a {
       color: #ffffff;
     }
     .code {

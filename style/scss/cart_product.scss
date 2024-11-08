@@ -254,11 +254,11 @@ body {
 
   .cart-container {
     max-width: 1170px;
-    margin: 131px auto;
+    margin: auto;
+    margin-top: 131px;
     padding: 20px;
-    background-color: #fff;
     border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+
     display: flex;
     .cart-table {
       width: 70%;
@@ -355,52 +355,62 @@ body {
         text-align: left;
       }
     }
-
   }
-  .price{
+  .price {
     font-family: 'Josefin Sans';
-font-size: 14px;
-font-weight: 400;
-line-height: 14px;
-text-align: left;
-color: #15245E;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 14px;
+    text-align: left;
+    color: #15245e;
   }
   #cart-items tr {
-    border-bottom: 1px solid;
+    border-bottom: 1px solid #E1E1E4;
   }
 }
 .quantity-control {
-    display: flex;
-    align-items: center;
-    border: 1px solid #e0e0e0;
-    border-radius: 4px;
-    overflow: hidden;
-    width: 100px;
-  }
-  
-  .quantity-btn {
-    background-color: #f0f0f0;
-    border: none;
-    width: 30px;
-    height: 30px;
-    cursor: pointer;
-    font-size: 16px;
-    color: #888;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-  
-  .quantity-btn:hover {
-    background-color: #e0e0e0;
-  }
-  
-  .quantity-input {
-    width: 40px;
-    text-align: center;
-    border: none;
-    background-color: #f8f8f8;
-    font-size: 16px;
-    color: #333;
-  }
-  
+  display: flex;
+  align-items: center;
+}
+
+.quantity-btn {
+  width: 12px;
+  height: 15px;
+  font-size: 14px;
+  border: 1px solid #ccc;
+ 
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #BEBFC2;
+}
+
+.quantity-input {
+  width: 27px;
+  height: 15px;
+  text-align: center;
+  border: none;
+   background-color: #f0f0f0;
+}
+
+.quantity-btn:hover {
+  background-color: #e0e0e0;
+}
+
+.clear_button {
+  width: 134px;
+  height: 39px;
+  background-color: #fb2e86;
+  border: none;
+  gap: 0px;
+  border-radius: 2px 0px 0px 0px;
+  opacity: 0px;
+  font-family: 'osefin Sans';
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 16px;
+  color: white;
+  margin-left: 840px;
+  margin-top: 37px;
+}

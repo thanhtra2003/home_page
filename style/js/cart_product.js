@@ -22,20 +22,23 @@ function displayCartItems() {
               <p> NSX: Việt Nam </p>  
         </div>
         </td>
-        <td class ="price">$${product.price.toFixed(2)}</td>
+        <td class="price">$${product.price.toFixed(2)}</td>
         <td>
         <div class="quantity-control">
           <button class="quantity-btn minus" data-index="${index}">-</button>
-          <input type="text" class="quantity-input" value="${product.quantity}" readonly>
+          <input class="quantity-input" value="${product.quantity}" data-index="${index}">
           <button class="quantity-btn plus" data-index="${index}">+</button>
         </div>
+        
       </td>
-        <td>$${productTotal.toFixed(2)}</td>
-      `
+        <td class="product-total">$${productTotal.toFixed(2)}</td>
+    `
 
     cartItemsContainer.appendChild(row)
+
     row.querySelector('.minus').addEventListener('click', () => updateQuantity(index, -1))
     row.querySelector('.plus').addEventListener('click', () => updateQuantity(index, 1))
+    row.querySelector('.quantity-input').addEventListener('input', (e) => updateQuantityInput(index, e.target.value))
   })
 
   subtotalElement.textContent = `$${subtotal.toFixed(2)}`
@@ -61,7 +64,6 @@ window.onload = displayCartItems
 
 document.querySelector('.checkout-btn').addEventListener('click', function () {
   localStorage.removeItem('cart')
-
   window.location.href = '/order_complete.html'
 })
 
@@ -75,3 +77,23 @@ function updateQuantity(index, change) {
   localStorage.setItem('cart', JSON.stringify(cart))
   displayCartItems()
 }
+
+// Hàm cập nhật số lượng từ ô input và thay đổi tổng tiền
+function updateQuantityInput(index, value) {
+  let cart = JSON.parse(localStorage.getItem('cart')) || []
+  const product = cart[index]
+
+  const newQuantity = Math.max(1, parseInt(value) || 1)
+  product.quantity = newQuantity
+  cart[index] = product
+
+  localStorage.setItem('cart', JSON.stringify(cart))
+  displayCartItems()
+}
+
+// Nút "Clear All" để xóa toàn bộ sản phẩm trong giỏ hàng
+const clearAllButton = document.getElementById('clear_button')
+clearAllButton.addEventListener('click', () => {
+  localStorage.removeItem('cart')
+  displayCartItems()
+})
