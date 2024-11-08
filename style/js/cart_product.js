@@ -78,7 +78,6 @@ function updateQuantity(index, change) {
   displayCartItems()
 }
 
-// Hàm cập nhật số lượng từ ô input và thay đổi tổng tiền
 function updateQuantityInput(index, value) {
   let cart = JSON.parse(localStorage.getItem('cart')) || []
   const product = cart[index]
@@ -91,7 +90,6 @@ function updateQuantityInput(index, value) {
   displayCartItems()
 }
 
-// Nút "Clear All" để xóa toàn bộ sản phẩm trong giỏ hàng
 const clearAllButton = document.getElementById('clear_button')
 clearAllButton.addEventListener('click', () => {
   localStorage.removeItem('cart')
