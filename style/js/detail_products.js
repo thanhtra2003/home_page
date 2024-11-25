@@ -1,67 +1,129 @@
+// async function displayProductDetails() {
+//   const params = new URLSearchParams(window.location.search)
+//   const idProducts = params.get('id') // Lấy 'id' từ URL params
+
+//   if (idProducts) {
+//     const response = await fetch(`https://dummyjson.com/products/${idProducts}`)
+//     const product = await response.json()
+
+//     const title = document.querySelector('.title')
+//     title.innerText = product.title
+
+//     const discount = document.querySelector('.discount')
+//     discount.innerText = product.discountPercentage
+
+//     const origin = document.querySelector('.origin')
+//     origin.innerText = product.price
+
+//     const description = document.querySelector('.description')
+//     description.innerText = product.description
+
+//     const categories = document.querySelector('.categories')
+//     categories.innerText = product.category
+
+//     const tags = document.querySelector('.tags')
+//     tags.innerText = product.tags
+
+//     const thumbnailElement = document.getElementById('thumbnail-img')
+//     thumbnailElement.src = product.images[0]
+
+//     const thumbnailsContainer = document.getElementById('image-thumbnails')
+//     thumbnailsContainer.innerHTML = ''
+
+//     product.images.forEach(imageUrl => {
+//       const smallImg = document.createElement('img')
+//       smallImg.src = imageUrl
+//       smallImg.alt = product.title
+//       smallImg.classList.add('small-image')
+
+//       smallImg.addEventListener('click', () => {
+//         thumbnailElement.src = imageUrl
+//       })
+
+//       thumbnailsContainer.appendChild(smallImg)
+//     })
+//   }
+// }
+
+// displayProductDetails()
+
 async function displayProductDetails() {
-    const params = new URLSearchParams(window.location.search)
-    const idProducts = params.get('id') // Lấy 'id' từ URL params
-  
-    if (idProducts) {
-      const response = await fetch(`https://dummyjson.com/products/${idProducts}`)
-      const product = await response.json()
-  
-      const title = document.querySelector('.title')
-    title.innerText = product.title
+  const params = new URLSearchParams(window.location.search);
+  const idProducts = params.get('id'); // Get 'id' from URL params
 
-    const discount = document.querySelector('.discount')
-    discount.innerText = product.discountPercentage
+  if (idProducts) {
+    const response = await fetch(`https://dummyjson.com/products/${idProducts}`);
+    const product = await response.json();
 
-    const origin = document.querySelector('.origin')
-    origin.innerText = product.price
+    const title = document.querySelector('.title');
+    title.innerText = product.title;
 
-    const description = document.querySelector('.description')
-    description.innerText = product.description
+    const discount = document.querySelector('.discount');
+    discount.innerText = product.discountPercentage;
 
-    const categories = document.querySelector('.categories')
-    categories.innerText = product.category
+    const origin = document.querySelector('.origin');
+    origin.innerText = product.price;
 
-    const tags = document.querySelector('.tags')
-    tags.innerText = product.tags
+    const description = document.querySelector('.description');
+    description.innerText = product.description;
 
-      
-      const thumbnailElement = document.getElementById('thumbnail-img')
-      thumbnailElement.src = product.images[0]
-  
-     
-      const thumbnailsContainer = document.getElementById('image-thumbnails')
-      thumbnailsContainer.innerHTML = '' 
-  
-      product.images.forEach(imageUrl => {
-        const smallImg = document.createElement('img')
-        smallImg.src = imageUrl
-        smallImg.alt = product.title
-        smallImg.classList.add('small-image') 
-  
-        
-        smallImg.addEventListener('click', () => {
-          thumbnailElement.src = imageUrl 
-        })
-  
-        thumbnailsContainer.appendChild(smallImg) 
-      })
-    }
+    const categories = document.querySelector('.categories');
+    categories.innerText = product.category;
+
+    const tags = document.querySelector('.tags');
+    tags.innerText = product.tags;
+
+    const thumbnailElement = document.getElementById('thumbnail-img');
+    thumbnailElement.src = product.images[0];
+
+    const thumbnailsContainer = document.getElementById('image-thumbnails');
+    thumbnailsContainer.innerHTML = '';
+
+    product.images.forEach(imageUrl => {
+      const smallImg = document.createElement('img');
+      smallImg.src = imageUrl;
+      smallImg.alt = product.title;
+      smallImg.classList.add('small-image');
+
+      smallImg.addEventListener('click', () => {
+        thumbnailElement.src = imageUrl;
+      });
+
+      thumbnailsContainer.appendChild(smallImg);
+    });
+    
+    const cartButton = document.querySelector('.cart-icon');
+    cartButton.addEventListener('click', () => {
+      addToCart(product);
+    });
   }
-  
-  displayProductDetails()
-  
+}
 
-async function trendingProducts() {
+function addToCart(product) {
+  let cart = JSON.parse(localStorage.getItem('cart')) || [];
+  const productInCart = cart.find(item => item.id === product.id);
+  if (productInCart) {
+    productInCart.quantity += 1;
+  } else {
+    product.quantity = 1; 
+    cart.push(product);
+  }
+  localStorage.setItem('cart', JSON.stringify(cart));
+  alert(`${product.title} đã được thêm vào giỏ hàng!`);
+}
+
+displayProductDetails();
+
+
+async function trending() {
   const url = `https://dummyjson.com/products`
   const response = await fetch(url)
   const data = await response.json()
 
-  const productsContainer = document.getElementById('container_trending')
+  const productsContainer = document.getElementById('products-trending')
   productsContainer.innerHTML = ''
 
-
   const shuffledProducts = data.products.sort(() => 0.5 - Math.random())
-
 
   const randomProducts = shuffledProducts.slice(0, 4)
 
@@ -103,5 +165,5 @@ async function trendingProducts() {
           </div>
         `
   })
-}
-trendingProducts()
+}trending()
+

@@ -46,8 +46,10 @@ function displayProducts(products) {
 
     container.appendChild(productCard)
   })
-
+  icons()
   // Gắn sự kiện cho icon giỏ hàng
+}
+function icons() {
   const cartIcons = document.querySelectorAll('.cart-icon')
   cartIcons.forEach(icon => {
     icon.addEventListener('click', addToCart)
@@ -120,7 +122,7 @@ async function trendingProducts() {
         </div>
         
         <div class="infor_pro">
-          <h3 class="title">${product.title}</h3>
+          <h3 class="title"><a href="detail_products.html?id=${product.id}">${product.title}</a></h3>
           <div class="price_trend">
             <p class="discount">$${product.discountPercentage}</p>
             <p class="origin">$${product.price}</p>
@@ -128,17 +130,22 @@ async function trendingProducts() {
         </div>
          <!-- Icons giỏ hàng và yêu thích -->
         <div class="icons">
-          <img src="/assest/fluent_cart-24-regular.png">
+          <img src="/assest/fluent_cart-24-regular.png" class="cart-icon" 
+             data-product-id="${product.id}" 
+             data-product-name="${product.title}" 
+             data-product-price="${product.price}" 
+             data-product-thumbnail="${product.thumbnail}">
           <img src="/assest/uil_heart-alt (1).png">
           <img src="/assest/uil_search-plus (1).png">
         </div>
     <!-- Button View Detail -->
-        <button class="btn_view_detail">View Detail</button>
+        <button class="btn_view_detail" onclick="window.location.href='detail_products.html?id=${product.id}'">View Detail</button>
       </div>
     `
   })
 }
 trendingProducts()
+icons()
 
 // trending list
 async function trendingList() {
@@ -156,7 +163,7 @@ async function trendingList() {
             <img src="${product.images[0]}" alt="${product.title}" />
           </div>
         <div class="infor_list">
-          <h3 class="title_list">${product.title}</h3>
+          <h3 class="title_list"><a href="detail_products.html?id=${product.id}">${product.title}</a></h3>
           <p class="origin_list">$${product.price}</p>
         </div>
       </div>
@@ -219,9 +226,9 @@ fetch('https://dummyjson.com/products')
       <div class='contain_pro'>
       <img src="${product.thumbnail}" alt="${product.title}" />
       </div>
-      <h3>${product.title}</h3>
+      <h3><a href="detail_products.html?id=${product.id}">${product.title}</a></h3>
       <p> $${product.price}</p>
-       <button class="btn_view_detail">View Detail</button>
+       <button class="btn_view_detail" onclick="window.location.href='detail_products.html?id=${product.id}'">View Detail</button>
         <div class="hover"></div>
     </div>
     
@@ -233,22 +240,3 @@ fetch('https://dummyjson.com/products')
   })
   .catch(error => console.error('Lỗi khi lấy sản phẩm:', error))
 
-// async function displayProductDetails() {
-//   const params = new URLSearchParams(window.location.search)
-//   const idProducts = params.get('id') // Lấy 'id' từ URL params
-
-//   if (idProducts) {
-//     const response = await fetch(`https://dummyjson.com/products/${idProducts}`)
-//     const product = await response.json()
-//     const productDetails = document.getElementById('product-details')
-
-//     // Hiển thị chi tiết sản phẩm
-//     productDetails.innerHTML = `
-//             <h1>${product.title}</h1>
-//             <p>Price: $${product.price}</p>
-//             <p>Description: ${product.description}</p>
-//             <img src="${product.thumbnail}" alt="${product.title}">
-//           `
-//   }
-// }
-// displayProductDetails()

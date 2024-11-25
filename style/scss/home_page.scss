@@ -54,7 +54,7 @@ body {
       .wishlist {
         display: flex;
       }
-      .cart a{
+      .cart a {
         text-decoration: none;
         color: white;
       }
@@ -75,14 +75,14 @@ body {
 
       display: flex;
       h2 a {
-        a{
+        a {
           color: #0d0e43;
         }
         display: flex;
         align-items: center;
         justify-content: center;
         margin-right: 100px;
-        
+
         font-family: 'Josefin Sans';
         font-size: 34px;
         font-style: normal;
@@ -266,15 +266,15 @@ body {
     gap: 12px;
     margin-top: 15px;
     align-items: center;
-   
   }
 
   .name {
     font-family: 'lato';
     font-size: 18px;
     font-weight: 700;
-    a{
+    a {
       text-decoration: none;
+      color: #fb2e86;
     }
   }
   .name:hover {
@@ -615,6 +615,10 @@ body {
     // overflow: hidden; /* Ẩn nội dung vượt quá */
     // text-overflow: ellipsis; /* Hiển thị dấu ba chấm khi nội dung dài */
     text-align: center; /* Canh giữa tiêu đề */
+    a {
+      text-decoration: none;
+      color: #151875;
+    }
   }
 
   .price_trend {
@@ -634,7 +638,7 @@ body {
   }
 
   .origin {
-    color: #151875;
+    color:#b7bacb;
     font-family: 'Josefin Sans', sans-serif;
     font-size: 14px;
     font-weight: 400;
@@ -764,6 +768,10 @@ body {
       margin-left: 9px; /* Khoảng cách giữa hình ảnh và chữ */
       color: #151875;
       font-family: 'Josefin Sans';
+      .title_list a {
+        text-decoration: none;
+        color: #151875;
+      }
     }
   }
   .top_Categories {
@@ -1127,11 +1135,15 @@ body {
     text-align: center;
     margin-top: 27px;
     margin-bottom: 10px;
-    color: #151875;
+
     font-family: 'Josefin Sans', sans-serif;
     font-size: 20px;
     font-weight: 400;
     line-height: 20px;
+    a {
+      text-decoration: none;
+      color: #151875;
+    }
   }
 
   .product_top p {

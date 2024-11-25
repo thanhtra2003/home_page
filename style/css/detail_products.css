@@ -387,13 +387,13 @@ body .trending_products h1 {
   line-height: 36px;
   margin-bottom: 47px;
 }
-body #container_trending {
+body #products-trending {
   display: flex;
   justify-content: space-around;
   flex-wrap: wrap;
   gap: 20px;
 }
-body #container_trending .product_trend {
+body #products-trending .product_trend {
   width: 270px;
   height: 350px;
   background-color: #ffffff;
@@ -402,7 +402,7 @@ body #container_trending .product_trend {
   position: relative;
   overflow: hidden; /* Ẩn phần nội dung tràn ra ngoài */
 }
-body #container_trending .pading {
+body #products-trending .pading {
   height: 340px;
   align-items: center;
   display: flex;
@@ -411,26 +411,26 @@ body #container_trending .pading {
   height: 270px;
   background-color: #f5f6f8;
 }
-body #container_trending .image_trend {
+body #products-trending .image_trend {
   display: flex;
   align-items: center;
   justify-content: center;
 }
-body #container_trending .image_trend img {
+body #products-trending .image_trend img {
   width: 171px;
   height: 171px;
 }
-body #container_trending .infor_pro {
+body #products-trending .infor_pro {
   font-family: "Josefin Sans", sans-serif;
   width: 100%;
   margin-top: 15px;
   margin-left: 5px;
 }
-body #container_trending .infor_pro .price_title {
+body #products-trending .infor_pro .price_title {
   display: flex;
   align-items: center;
 }
-body #container_trending .infor_pro h3.title {
+body #products-trending .infor_pro h3.title {
   font-family: "Lato";
   font-size: 16px;
   font-weight: 700;
@@ -441,7 +441,7 @@ body #container_trending .infor_pro h3.title {
   text-overflow: ellipsis; /* Hiển thị dấu ba chấm khi nội dung dài */
   margin-right: 48px;
 }
-body #container_trending .price_trend {
+body #products-trending .price_trend {
   display: flex;
   align-items: center;
   justify-content: center;

@@ -1,82 +1,3 @@
-// let currentActiveMenu = null // Biến để lưu danh mục đang active
-
-// async function load() {
-//   const url = 'https://dummyjson.com/products/categories'
-//   const response = await fetch(url)
-//   const categories = await response.json()
-
-//   const categoryContainer = document.getElementById('menu_category') // Phần tử HTML chứa danh mục
-//   categoryContainer.innerHTML = '' // Xóa nội dung cũ nếu có
-
-//   // Lấy 4 danh mục đầu tiên
-//   const FourCategories = categories.slice(0, 4) // Chỉ lấy 4 danh mục đầu tiên
-
-//   // Hiển thị các danh mục lên giao diện
-//   FourCategories.forEach((category, index) => {
-//     categoryContainer.innerHTML += `
-//       <div class="menu" onclick="loadProducts('${category.slug}', this)">
-//         <span>${category.name}</span>
-//       </div>
-//     `
-//   })
-
-//   // Mặc định hiển thị sản phẩm của danh mục đầu tiên
-//   loadProducts(FourCategories[0].slug)
-
-//   // Đặt màu cho danh mục đầu tiên là màu đỏ
-//   currentActiveMenu = categoryContainer.querySelector('.menu') // Lưu danh mục đầu tiên
-//   currentActiveMenu.style.color = 'red' // Đặt màu đỏ cho danh mục đầu tiên
-// }
-
-// async function loadProducts(categorySlug, clickedElement) {
-//   const url = `https://dummyjson.com/products/category/${categorySlug}` // Lấy sản phẩm theo danh mục
-//   const response = await fetch(url)
-//   const data = await response.json()
-
-//   const productsContainer = document.getElementById('products') // Phần tử HTML chứa sản phẩm
-//   productsContainer.innerHTML = '' // Xóa nội dung cũ nếu có
-
-//   // Lấy 6 sản phẩm đầu tiên
-//   const products = data.products.slice(0, 6)
-
-//   // Hiển thị các sản phẩm lên giao diện
-//   products.forEach(product => {
-//     productsContainer.innerHTML += `
-//       <div class="product">
-//         <div class="image">
-//           <img src="${product.thumbnail}" />
-//         </div>
-//         <div class="infor">
-//           <h3>${product.title}</h3>
-//           <div class="price">
-//             <p>$${product.discountPercentage}</p>
-//             <p class="sale">$${product.price}</p>
-//           </div>
-//         </div>
-//         <div class="icons">
-//           <img src="/assest/fluent_cart-24-regular.png">
-//           <img src="/assest/uil_heart-alt (1).png">
-//           <img src="/assest/uil_search-plus (1).png">
-//         </div>
-//       </div>
-//     `
-//   })
-
-//   // Cập nhật phần active cho danh mục
-//   const menus = document.querySelectorAll('.menu') // Lấy tất cả các danh mục
-//   menus.forEach(menu => {
-//     menu.style.color = '' // Khôi phục màu sắc mặc định cho tất cả các danh mục
-//   })
-
-//   // Đặt màu cho danh mục được nhấn
-//   clickedElement.style.color = 'red' // Đặt màu chữ cho danh mục được nhấn
-
-//   // Cập nhật currentActiveMenu
-//   currentActiveMenu = clickedElement // Cập nhật danh mục đang active
-// }
-
-// // Gọi hàm load khi DOM đã được tải
-// document.addEventListener('DOMContentLoaded', load)
 fetch('https://dummyjson.com/products/categories')
   .then(response => response.json())
   .then(categories => {
@@ -121,12 +42,16 @@ function showProducts(categorySlug) {
           <div class="image-container">
               <img src="${product.thumbnail}" alt="${product.title}" />
           <div class="icon-container">
-              <img class="cart-icon" src="/assest/fluent_cart-24-regular.png" alt="Cart" />
+              <img class="cart-icon" data-product-id="${product.id}" 
+             data-product-name="${product.title}" 
+             data-product-price="${product.price}" 
+             data-product-thumbnail="${product.thumbnail}"
+              src="/assest/fluent_cart-24-regular.png" alt="Cart" />
               <img class="heart-icon" src="/assest/uil_heart-alt (1).png" alt="Heart" />
               <img class="search-icon" src="/assest/uil_search-plus (1).png" alt="Search" />
           </div>
         </div>
-          <h2>${product.title}</h2>
+          <h2><a href="detail_products.html?id=${product.id}">${product.title}</a></h2>
           <div class="price-container">
             <p class="discount-price">$${product.discountPercentage}</p>
             <p class="original-price">$${product.price}</p>
@@ -135,6 +60,33 @@ function showProducts(categorySlug) {
 
         productsContainer.appendChild(productElement)
       })
+      const cartIcons = document.querySelectorAll('.cart-icon')
+      cartIcons.forEach(icon => {
+        icon.addEventListener('click', addToCart)
+      })
     })
     .catch(error => console.error('Error loading products:', error))
+}
+function addToCart(event) {
+  const icon = event.target
+  const product = {
+    id: icon.getAttribute('data-product-id'),
+    name: icon.getAttribute('data-product-name'),
+    price: parseFloat(icon.getAttribute('data-product-price')),
+    thumbnail: icon.getAttribute('data-product-thumbnail'),
+    quantity: 1
+  }
+
+  let cart = JSON.parse(localStorage.getItem('cart')) || []
+
+  const existingProductIndex = cart.findIndex(item => item.id === product.id)
+  if (existingProductIndex > -1) {
+    cart[existingProductIndex].quantity += 1
+  } else {
+    cart.push(product)
+  }
+
+  localStorage.setItem('cart', JSON.stringify(cart))
+
+  alert(`${product.name} đã được thêm vào giỏ hàng!`)
 }

@@ -258,6 +258,7 @@ body .name {
 }
 body .name a {
   text-decoration: none;
+  color: #fb2e86;
 }
 body .name:hover {
   color: #fb2e86;
@@ -572,6 +573,10 @@ body .infor_pro h3.title {
   white-space: nowrap; /* Ngăn không cho xuống dòng */
   text-align: center; /* Canh giữa tiêu đề */
 }
+body .infor_pro h3.title a {
+  text-decoration: none;
+  color: #151875;
+}
 body .price_trend {
   display: flex;
   align-items: center;
@@ -587,7 +592,7 @@ body .discount {
   text-align: center;
 }
 body .origin {
-  color: #151875;
+  color: #b7bacb;
   font-family: "Josefin Sans", sans-serif;
   font-size: 14px;
   font-weight: 400;
@@ -701,6 +706,10 @@ body .banner_sale .infor_list {
   margin-left: 9px; /* Khoảng cách giữa hình ảnh và chữ */
   color: #151875;
   font-family: "Josefin Sans";
+}
+body .banner_sale .infor_list .title_list a {
+  text-decoration: none;
+  color: #151875;
 }
 body .top_Categories {
   max-width: 1168px;
@@ -1033,11 +1042,14 @@ body .product_top h3 {
   text-align: center;
   margin-top: 27px;
   margin-bottom: 10px;
-  color: #151875;
   font-family: "Josefin Sans", sans-serif;
   font-size: 20px;
   font-weight: 400;
   line-height: 20px;
+}
+body .product_top h3 a {
+  text-decoration: none;
+  color: #151875;
 }
 body .product_top p {
   text-align: center;

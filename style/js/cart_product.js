@@ -7,42 +7,44 @@ function displayCartItems() {
   let subtotal = 0
 
   cart.forEach((product, index) => {
-    const productTotal = product.price * product.quantity
+    const productTotal = (product.price || 0) * (product.quantity || 1)
     subtotal += productTotal
 
     const row = document.createElement('tr')
 
     row.innerHTML = `
-        <td class="product_cart">
+      <td class="product_cart">
         <img src="${product.thumbnail}" alt="${product.name}" class="cart-img">
-         <img src="/assest/Group 43.jpg" class="remove-btn" data-index="${index}">
+        <img src="/assest/Group 43.jpg" class="remove-btn" data-index="${index}">
         <div class="contain_pro">
-              <span>${product.name}</span>
-              <p> Color: Blue </p>
-              <p> NSX: Việt Nam </p>  
+          <span>${product.name}</span>
+          <p>Color: Blue</p>
+          <p>NSX: Việt Nam</p>
         </div>
-        </td>
-        <td class="price">$${product.price.toFixed(2)}</td>
-        <td>
+      </td>
+      <td class="price">$${product.price != null ? product.price.toFixed(2) : '0.00'}</td>
+      <td>
         <div class="quantity-control">
           <button class="quantity-btn minus" data-index="${index}">-</button>
-          <input class="quantity-input" value="${product.quantity}" data-index="${index}">
+          <input class="quantity-input" type="number" value="${product.quantity || 1}" data-index="${index}">
           <button class="quantity-btn plus" data-index="${index}">+</button>
         </div>
-        
       </td>
-        <td class="product-total">$${productTotal.toFixed(2)}</td>
+      <td class="product-total">$${productTotal.toFixed(2)}</td>
     `
 
     cartItemsContainer.appendChild(row)
 
+    // Thêm sự kiện cho các nút trong hàng sản phẩm
     row.querySelector('.minus').addEventListener('click', () => updateQuantity(index, -1))
     row.querySelector('.plus').addEventListener('click', () => updateQuantity(index, 1))
-    row.querySelector('.quantity-input').addEventListener('input', (e) => updateQuantityInput(index, e.target.value))
+    row.querySelector('.quantity-input').addEventListener('input', e => updateQuantityInput(index, e.target.value))
   })
 
+  // Cập nhật tổng tiền
   subtotalElement.textContent = `$${subtotal.toFixed(2)}`
 
+  // Thêm sự kiện cho các nút xóa sản phẩm
   const removeButtons = document.querySelectorAll('.remove-btn')
   removeButtons.forEach(button => {
     button.addEventListener('click', removeItemFromCart)

@@ -174,60 +174,177 @@ body .banner span:nth-child(4) {
   left: 465px;
   color: #fb2e86;
 }
-
-.order-completed-container {
+body .order_complete {
   display: flex;
-  align-items: center;
-  justify-content: space-around;
-  background-color: white;
-  border-radius: 10px;
-  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
-  margin-top: 181px;
-  max-width: 1170px;
+  max-width: 1168px;
   margin: auto;
 }
-
-.icon-container {
-  flex: 1;
+body .order_complete img.clock {
+  margin-top: 219px;
+  width: 90px;
+  height: 90px;
+  margin-right: 139px;
 }
-
-.side-icon {
-  width: 50px;
-  height: 50px;
+body .order_complete .content {
+  margin-top: 181px;
+  text-align: center;
 }
-
-.content {
-  flex: 2;
+body .order_complete .content .check {
+  width: 65px;
+  height: 65px;
+  background-color: #0d0e43;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: auto;
 }
-
-.checkmark-container img {
-  width: 50px;
-  margin-bottom: 20px;
+body .order_complete .content h1 {
+  color: #101750;
+  font-family: "Josefin Sans";
+  font-size: 36px;
+  font-weight: 700;
+  line-height: 36px;
+  text-align: center;
+  text-underline-position: from-font;
+  -webkit-text-decoration-skip-ink: none;
+          text-decoration-skip-ink: none;
+  margin-top: 32px;
+  margin-bottom: 28px;
 }
-
-h1 {
-  font-size: 24px;
-  color: #2b2f3a;
+body .order_complete .content p {
+  font-family: "Lato";
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 30px;
+  text-align: center;
+  text-underline-position: from-font;
+  -webkit-text-decoration-skip-ink: none;
+          text-decoration-skip-ink: none;
+  color: #8d92a7;
   margin-bottom: 10px;
 }
-
-p {
-  color: #7d828a;
-  font-size: 16px;
-  margin-bottom: 20px;
-}
-
-.continue-btn {
-  background-color: #ff3d81;
-  color: white;
+body .order_complete .content .continue-btn {
+  background-color: #ff1788;
+  width: 208px;
+  height: 59px;
   border: none;
-  padding: 10px 20px;
-  border-radius: 5px;
+  border-radius: 2px;
+  font-family: "Lato";
   font-size: 16px;
-  cursor: pointer;
-  transition: background-color 0.3s;
+  font-weight: 600;
+  line-height: 30px;
+  text-align: center;
+  text-underline-position: from-font;
+  -webkit-text-decoration-skip-ink: none;
+          text-decoration-skip-ink: none;
+  color: #fff;
 }
-
-.continue-btn:hover {
-  background-color: #ff1a63;
+body .order_complete img.check_list {
+  margin-left: 210px;
+  width: 70px;
+  height: 70px;
+  margin-top: 534px;
+}
+body .footer {
+  background-color: #f7f7fb;
+  max-width: 1920px;
+  margin-top: 115px;
+}
+body .footer-container {
+  display: flex;
+  justify-content: space-around;
+  margin: auto;
+  width: 1168px;
+}
+body .footer-section {
+  margin-top: 95px;
+  margin-bottom: 101px;
+}
+body .footer-section h3 {
+  font-family: "Josefin Sans";
+  font-size: 22px;
+  font-weight: 600;
+  line-height: 22px;
+  margin-bottom: 42px;
+}
+body .footer-section h2 {
+  font-family: "Josefin Sans";
+  font-size: 38px;
+  font-weight: 700;
+  line-height: 38px;
+  text-align: left;
+}
+body .footer-section p {
+  color: #8e8e8e;
+  margin-bottom: 10px;
+  font-family: "Lato";
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 19.2px;
+  text-align: left;
+}
+body .footer-section ul {
+  list-style-type: none;
+  padding: 0;
+}
+body .footer-section ul li {
+  margin-bottom: 21px;
+  font-family: "Lato";
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 19.2px;
+  text-align: left;
+}
+body .footer-section ul li a {
+  text-decoration: none;
+  color: #6d6d6d;
+}
+body .footer-section ul li a:hover {
+  color: #2d2d2d;
+}
+body .footer .subscribe {
+  display: flex;
+  margin-bottom: 25px;
+  margin-top: 31px;
+  width: 377px;
+  height: 44px;
+}
+body .footer .subscribe input[type=email] {
+  padding: 10px;
+  flex: 1;
+  border: 1px solid #e0e0e0;
+  outline: none;
+}
+body .footer .subscribe button {
+  padding: 10px;
+  background-color: #fb2e86;
+  color: #fff;
+  border: none;
+  border-radius: 0 5px 5px 0;
+  cursor: pointer;
+}
+body .footer .subscribe button:hover {
+  background-color: #d12270;
+}
+body .footerbottom {
+  max-width: 1920px;
+  margin: auto;
+  background-color: #e0d9f5;
+}
+body .footer-bottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 53px;
+  width: 535px;
+  margin: auto;
+}
+body .footer-bottom p {
+  color: #8e8e8e;
+  margin: 0;
+}
+body .footer-socials a {
+  margin: 0 5px;
+  color: #3f3f3f;
 }

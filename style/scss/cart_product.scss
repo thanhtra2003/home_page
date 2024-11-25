@@ -260,31 +260,72 @@ body {
     border-radius: 8px;
 
     display: flex;
+    // .cart-table {
+    //   width: 70%;
+    //   border-collapse: collapse;
+
+    //   th,
+    //   td {
+    //     padding: 15px;
+    //     text-align: left;
+    //   }
+    //   th {
+    //     font-family: 'Josefin Sans';
+    //     font-size: 20px;
+    //     font-weight: 700;
+    //     line-height: 20px;
+    //     text-align: left;
+
+    //     color: #1d3178;
+    //   }
+    // }
     .cart-table {
       width: 70%;
       border-collapse: collapse;
-
-      th,
-      td {
-        padding: 15px;
-        text-align: left;
-      }
-      th {
-        font-family: 'Josefin Sans';
-        font-size: 20px;
-        font-weight: 700;
-        line-height: 20px;
-        text-align: left;
-
-        color: #1d3178;
-      }
     }
+    th.left{
+      text-align: left;
+    }
+    th,
+    td {
+      padding: 15px;
+      text-align: center; /* Căn giữa theo chiều ngang */
+      vertical-align: middle; /* Căn giữa theo chiều dọc */
+    }
+
+    th {
+      font-family: 'Josefin Sans';
+      font-size: 20px;
+      font-weight: 700;
+      line-height: 20px;
+      color: #1d3178;
+    }
+    td .quantity{
+      width: 200px;
+    }
+    td .quantity-control {
+      display: flex;
+      justify-content: center; /* Căn giữa các nút số lượng */
+      align-items: center; /* Căn giữa các phần tử con theo chiều dọc */
+    }
+
+    td .quantity-input {
+      width: 50px;
+      text-align: center;
+    }
+
+    td .product-total,
+    td .price {
+      text-align: center; /* Căn giữa giá và tổng */
+    }
+
     .cart-totals {
       padding: 15px;
       background-color: #f9f9ff;
       border-radius: 8px;
       width: 30%;
       margin-left: 20px;
+      height: 300px;
       p {
         font-size: 18px;
         font-weight: bold;
@@ -293,7 +334,7 @@ body {
         font-size: 20px;
         font-weight: 700;
         line-height: 20px;
-        text-align: left;
+        text-align: center;
         margin-bottom: 42px;
       }
       .totals-line {
@@ -336,9 +377,12 @@ body {
     }
     .remove-btn {
       position: absolute;
+      left:90px;
+
     }
     .contain_pro {
       display: grid;
+      margin-left: 17px;
       span {
         font-family: 'Josefin Sans';
         font-size: 14px;
@@ -356,7 +400,8 @@ body {
       }
     }
   }
-  .price {
+  .price, 
+  .product-total {
     font-family: 'Josefin Sans';
     font-size: 14px;
     font-weight: 400;
@@ -365,7 +410,7 @@ body {
     color: #15245e;
   }
   #cart-items tr {
-    border-bottom: 1px solid #E1E1E4;
+    border-bottom: 1px solid #e1e1e4;
   }
 }
 .quantity-control {
@@ -378,12 +423,12 @@ body {
   height: 15px;
   font-size: 14px;
   border: 1px solid #ccc;
- 
+
   cursor: pointer;
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: #BEBFC2;
+  background-color: #bebfc2;
 }
 
 .quantity-input {
@@ -391,7 +436,7 @@ body {
   height: 15px;
   text-align: center;
   border: none;
-   background-color: #f0f0f0;
+  background-color: #f0f0f0;
 }
 
 .quantity-btn:hover {

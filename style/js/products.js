@@ -134,14 +134,14 @@ function renderProducts(page) {
         `
     container.appendChild(productCard)
   })
-
+  icons()
   renderPagination(page)
-
+}
+function icons() {
   const cartIcons = document.querySelectorAll('.cart-icon')
   cartIcons.forEach(icon => {
     icon.addEventListener('click', addToCart)
   })
-
 }
 function addToCart(event) {
   const icon = event.target
@@ -166,7 +166,6 @@ function addToCart(event) {
 
   alert(`${product.name} đã được thêm vào giỏ hàng!`)
 }
-
 
 // Hàm hiển thị phân trang
 function renderPagination(page) {
