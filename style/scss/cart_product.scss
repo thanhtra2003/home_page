@@ -60,6 +60,9 @@ body {
         align-items: center;
         justify-content: center;
       }
+      .cart a i {
+        color: white;
+      }
     }
   }
   .nav_bar {
@@ -184,73 +187,7 @@ body {
       color: #fb2e86;
     }
   }
-  //   .cart-container {
-  //     display: flex;
-  //     // justify-content: space-between;
-  //     max-width: 1170px;
-  //     margin: auto;
-  //     margin-top: 131px;
-  //     background-color: #fff;
-  //     border-radius: 8px;
-  //     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  //   }
-
-  //   .cart-table {
-  //     width: 70%;
-  //     border-collapse: collapse;
-  //   }
-
-  //   .cart-table th,
-  //   .cart-table td {
-  //     padding: 15px;
-  //     text-align: left;
-  //   }
-
-  //   .cart-table th {
-  //     font-weight: bold;
-  //     color: #333;
-  //   }
-  //   .cart-totals {
-  //     width: 25%;
-  //     padding: 20px;
-  //     background-color: #f9f9ff;
-  //     border-radius: 8px;
-  // }
-
-  // .cart-totals h3 {
-  //     margin-top: 0;
-  //     font-size: 18px;
-  //     font-weight: bold;
-  //     color: #333;
-  // }
-
-  // .totals-line {
-  //     display: flex;
-  //     justify-content: space-between;
-  //     margin-bottom: 10px;
-  //     font-size: 16px;
-  // }
-
-  // .shipping-info {
-  //     font-size: 14px;
-  //     color: #777;
-  //     margin-bottom: 20px;
-  // }
-
-  // .checkout-btn {
-  //     width: 100%;
-  //     padding: 10px;
-  //     background-color: #28a745;
-  //     color: #fff;
-  //     border: none;
-  //     border-radius: 5px;
-  //     font-size: 16px;
-  //     cursor: pointer;
-  // }
-
-  // .checkout-btn:hover {
-  //     background-color: #218838;
-  // }
+  
 
   .cart-container {
     max-width: 1170px;
@@ -260,25 +197,7 @@ body {
     border-radius: 8px;
 
     display: flex;
-    // .cart-table {
-    //   width: 70%;
-    //   border-collapse: collapse;
-
-    //   th,
-    //   td {
-    //     padding: 15px;
-    //     text-align: left;
-    //   }
-    //   th {
-    //     font-family: 'Josefin Sans';
-    //     font-size: 20px;
-    //     font-weight: 700;
-    //     line-height: 20px;
-    //     text-align: left;
-
-    //     color: #1d3178;
-    //   }
-    // }
+   
     .cart-table {
       width: 70%;
       border-collapse: collapse;

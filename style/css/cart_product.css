@@ -63,6 +63,9 @@ body .heading_bar .feature .unit {
   align-items: center;
   justify-content: center;
 }
+body .heading_bar .feature .cart a i {
+  color: white;
+}
 body .nav_bar {
   display: flex;
   max-width: 1920px;
